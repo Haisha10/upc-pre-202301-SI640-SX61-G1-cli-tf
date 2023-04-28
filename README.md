@@ -23,11 +23,11 @@ exit
 banner motd $ *** SOLO PERSONAL AUTORIZADO *** $
 
 ! ASIGNAR IP ROUTER - MLSLIM1
-interface GigabitEthernet0/1
+interface g0/1
 ip address 172.21.17.138 255.255.255.248
 
 ! ASIGNAR IP ROUTER - MLSLIM2
-interface GigabitEthernet0/2
+interface g0/2
 ip address 172.21.17.146 255.255.255.248
 
 
@@ -102,13 +102,13 @@ name Management&Native
 exit
 
 ! ASIGNACION DE ENLACE TRUNCAL CON SWITCHES DE ACCESO
-interface range GigabitEthernet1/0/11-17
+interface range g1/0/11-17
 switchport trunk native vlan 99
 switchport mode trunk
 switchport nonegotiate
 
 ! ASIGNAR IP MLS - ROUTER
-interface GigabitEthernet1/0/1
+interface g1/0/1
 no switchport
 ip address 172.21.17.139 255.255.255.248
 
@@ -230,13 +230,13 @@ name Management&Native
 exit
 
 ! ASIGNACION DE ENLACE TRUNCAL CON SWITCHES DE ACCESO
-interface range GigabitEthernet1/0/11-17
+interface range g1/0/11-17
 switchport trunk native vlan 99
 switchport mode trunk
 switchport nonegotiate
 
 ! ASIGNAR IP MLS - ROUTER
-interface GigabitEthernet1/0/1
+interface g1/0/1
 no switchport
 ip address 172.21.17.149 255.255.255.248
 
@@ -840,7 +840,7 @@ exit
 banner motd $ *** SOLO PERSONAL AUTORIZADO *** $
 
 ! ASIGNAR IP ROUTER - MLSPIU1
-interface GigabitEthernet0/0/1
+interface g0/0/1
 ip address 172.21.33.90 255.255.255.248
 
 ! ASIGNAR IP A ROUTERS DE OTRAS SEDES E ISP
@@ -898,13 +898,13 @@ name Management&Native
 exit
 
 ! ASIGNACION DE ENLACE TRUNCAL CON SWITCHES DE ACCESO
-interface range GigabitEthernet1/0/11-17
+interface range g1/0/11-17
 switchport trunk native vlan 99
 switchport mode trunk
 switchport nonegotiate
 
 ! ASIGNAR IP MLS - ROUTER
-interface GigabitEthernet1/0/1
+interface g1/0/1
 no switchport
 ip address 172.21.33.91 255.255.255.248
 
@@ -1508,7 +1508,7 @@ exit
 banner motd $ *** SOLO PERSONAL AUTORIZADO *** $
 
 ! ASIGNAR IP ROUTER - MLSARE1
-interface GigabitEthernet0/0/1
+interface g0/0/1
 ip address 172.21.48.210 255.255.255.248
 
 ! ASIGNAR IP A ROUTERS DE OTRAS SEDES E ISP
@@ -1566,13 +1566,13 @@ name Management&Native
 exit
 
 ! ASIGNACION DE ENLACE TRUNCAL CON SWITCHES DE ACCESO
-interface range GigabitEthernet1/0/11-17
+interface range g1/0/11-17
 switchport trunk native vlan 99
 switchport mode trunk
 switchport nonegotiate
 
 ! ASIGNAR IP MLS - ROUTER
-interface GigabitEthernet1/0/1
+interface g1/0/1
 no switchport
 ip address 172.21.48.211 255.255.255.248
 
@@ -2176,7 +2176,7 @@ exit
 banner motd $ *** SOLO PERSONAL AUTORIZADO *** $
 
 ! ASIGNAR IP ROUTER - MLSCUS1
-interface GigabitEthernet0/0/1
+interface g0/0/1
 ip address 172.21.64.212 255.255.255.248
 
 ! ASIGNAR IP A ROUTERS DE OTRAS SEDES E ISP
@@ -2234,13 +2234,13 @@ name Management&Native
 exit
 
 ! ASIGNACION DE ENLACE TRUNCAL CON SWITCHES DE ACCESO
-interface range GigabitEthernet1/0/11-17
+interface range g1/0/11-17
 switchport trunk native vlan 99
 switchport mode trunk
 switchport nonegotiate
 
 ! ASIGNAR IP MLS - ROUTER
-interface GigabitEthernet1/0/1
+interface g1/0/1
 no switchport
 ip address 172.21.64.213 255.255.255.248
 
@@ -2844,7 +2844,7 @@ exit
 banner motd $ *** SOLO PERSONAL AUTORIZADO *** $
 
 ! ASIGNAR IP ROUTER - MLSCAJ1
-interface GigabitEthernet0/0/1
+interface g0/0/1
 ip address 172.21.80.194 255.255.255.248
 
 ! ASIGNAR IP A ROUTERS DE OTRAS SEDES E ISP
@@ -2902,13 +2902,13 @@ name Management&Native
 exit
 
 ! ASIGNACION DE ENLACE TRUNCAL CON SWITCHES DE ACCESO
-interface range GigabitEthernet1/0/11-17
+interface range g1/0/11-17
 switchport trunk native vlan 99
 switchport mode trunk
 switchport nonegotiate
 
 ! ASIGNAR IP MLS - ROUTER
-interface GigabitEthernet1/0/1
+interface g1/0/1
 no switchport
 ip address 172.21.80.195 255.255.255.248
 
