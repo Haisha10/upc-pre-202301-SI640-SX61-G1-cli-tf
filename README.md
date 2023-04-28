@@ -81,21 +81,21 @@ banner motd $ *** SOLO PERSONAL AUTORIZADO *** $
 ip routing
 
 ! CREACION Y NOMBRAMIENTO DE VLANS
-VLAN 10
+VLAN 110
 name Administracion
-VLAN 20
+VLAN 120
 name Logistica
-VLAN 30
+VLAN 130
 name Finanzas
-VLAN 40
+VLAN 140
 name Marketing
-VLAN 50
+VLAN 150
 name Ventas
-VLAN 60
+VLAN 160
 name Servidores
-VLAN 70
+VLAN 170
 name WifiEjecutivo
-VLAN 80
+VLAN 180
 name WifiCliente
 VLAN 99
 name Management&Native
@@ -118,28 +118,28 @@ no ip address
 shutdown
 
 ! ASIGNAR IP DE LA MLS EN LAS VLANS
-interface Vlan10
+interface Vlan110
 ip address 172.21.16.1 255.255.255.128
 !
-interface Vlan20
+interface Vlan120
 ip address 172.21.16.129 255.255.255.192
 !
-interface Vlan30
+interface Vlan130
 ip address 172.21.17.33  255.255.255.224
 !
-interface Vlan40
+interface Vlan140
 ip address 172.21.16.193 255.255.255.192
 !
-interface Vlan50
+interface Vlan150
 ip address 172.21.17.1 255.255.255.224
 !
-interface Vlan60
+interface Vlan160
 ip address 172.21.17.129 255.255.255.248
 !
-interface Vlan70
+interface Vlan170
 ip address 172.21.17.97 255.255.255.224
 !
-interface Vlan80
+interface Vlan180
 ip address 172.21.17.65 255.255.255.224
 !
 interface Vlan99
@@ -148,35 +148,35 @@ ip address 172.21.99.1 255.255.255.0
 exit
 
 ! CREAR DHCP PARA CADA VLAN
-ip dhcp pool POOL-VLAN10
+ip dhcp pool POOL-VLAN110
 network 172.21.16.0 255.255.255.128
 default-router 172.21.16.1
 !
-ip dhcp pool POOL-VLAN20
+ip dhcp pool POOL-VLAN120
 network 172.21.16.128 255.255.255.192
 default-router 172.21.16.129
 !
-ip dhcp pool POOL-VLAN30
+ip dhcp pool POOL-VLAN130
 network 172.21.17.32 255.255.255.224
 default-router 172.21.17.33
 !
-ip dhcp pool POOL-VLAN40
+ip dhcp pool POOL-VLAN140
 network 172.21.16.192 255.255.255.192
 default-router 172.21.16.193
 !
-ip dhcp pool POOL-VLAN50
+ip dhcp pool POOL-VLAN150
 network 172.21.17.0 255.255.255.224
 default-router 172.21.17.1
 !
-ip dhcp pool POOL-VLAN60
+ip dhcp pool POOL-VLAN160
 network 172.21.17.128 255.255.255.248
 default-router 172.21.17.129
 !
-ip dhcp pool POOL-VLAN70
+ip dhcp pool POOL-VLAN170
 network 172.21.17.96 255.255.255.224
 default-router 172.21.17.97
 !
-ip dhcp pool POOL-VLAN80
+ip dhcp pool POOL-VLAN180
 network 172.21.17.64 255.255.255.224
 default-router 172.21.17.65
 end
@@ -209,21 +209,21 @@ banner motd $ *** SOLO PERSONAL AUTORIZADO *** $
 ip routing
 
 ! CREACION Y NOMBRAMIENTO DE VLANS
-VLAN 10
+VLAN 110
 name Administracion
-VLAN 20
+VLAN 120
 name Logistica
-VLAN 30
+VLAN 130
 name Finanzas
-VLAN 40
+VLAN 140
 name Marketing
-VLAN 50
+VLAN 150
 name Ventas
-VLAN 60
+VLAN 160
 name Servidores
-VLAN 70
+VLAN 170
 name WifiEjecutivo
-VLAN 80
+VLAN 180
 name WifiCliente
 VLAN 99
 name Management&Native
@@ -246,28 +246,28 @@ no ip address
 shutdown
 
 ! ASIGNAR IP DE LA MLS EN LAS VLANS
-interface Vlan10
+interface Vlan110
 ip address 172.21.16.2 255.255.255.128
 !
-interface Vlan20
+interface Vlan120
 ip address 172.21.16.130 255.255.255.192
 !
-interface Vlan30
+interface Vlan130
 ip address 172.21.17.34  255.255.255.224
 !
-interface Vlan40
+interface Vlan140
 ip address 172.21.16.194 255.255.255.192
 !
-interface Vlan50
+interface Vlan150
 ip address 172.21.17.2 255.255.255.224
 !
-interface Vlan60
+interface Vlan160
 ip address 172.21.17.130 255.255.255.248
 !
-interface Vlan70
+interface Vlan170
 ip address 172.21.17.98 255.255.255.224
 !
-interface Vlan80
+interface Vlan180
 ip address 172.21.17.66 255.255.255.224
 !
 interface Vlan99
@@ -276,35 +276,35 @@ ip address 172.21.99.2 255.255.255.0
 exit
 
 ! CREAR DHCP PARA CADA VLAN
-ip dhcp pool POOL-VLAN10
+ip dhcp pool POOL-VLAN110
 network 172.21.16.0 255.255.255.128
 default-router 172.21.16.2
 !
-ip dhcp pool POOL-VLAN20
+ip dhcp pool POOL-VLAN120
 network 172.21.16.128 255.255.255.192
 default-router 172.21.16.130
 !
-ip dhcp pool POOL-VLAN30
+ip dhcp pool POOL-VLAN130
 network 172.21.17.32 255.255.255.224
 default-router 172.21.17.34
 !
-ip dhcp pool POOL-VLAN40
+ip dhcp pool POOL-VLAN140
 network 172.21.16.192 255.255.255.192
 default-router 172.21.16.194
 !
-ip dhcp pool POOL-VLAN50
+ip dhcp pool POOL-VLAN150
 network 172.21.17.0 255.255.255.224
 default-router 172.21.17.2
 !
-ip dhcp pool POOL-VLAN60
+ip dhcp pool POOL-VLAN160
 network 172.21.17.128 255.255.255.248
 default-router 172.21.17.130
 !
-ip dhcp pool POOL-VLAN70
+ip dhcp pool POOL-VLAN170
 network 172.21.17.96 255.255.255.224
 default-router 172.21.17.98
 !
-ip dhcp pool POOL-VLAN80
+ip dhcp pool POOL-VLAN180
 network 172.21.17.64 255.255.255.224
 default-router 172.21.17.66
 end
@@ -334,21 +334,21 @@ exit
 banner motd $ *** SOLO PERSONAL AUTORIZADO *** $
 
 ! CREACION Y NOMBRAMIENTO DE VLANS
-VLAN 10
+VLAN 110
 name Administracion
-VLAN 20
+VLAN 120
 name Logistica
-VLAN 30
+VLAN 130
 name Finanzas
-VLAN 40
+VLAN 140
 name Marketing
-VLAN 50
+VLAN 150
 name Ventas
-VLAN 60
+VLAN 160
 name Servidores
-VLAN 70
+VLAN 170
 name WifiEjecutivo
-VLAN 80
+VLAN 180
 name WifiCliente
 VLAN 99
 name Management&Native
@@ -357,11 +357,11 @@ exit
 ! ASIGNACION DE VLAN A PCS
 interface range f0/1-12
 switchport mode access
-switchport access vlan 10
+switchport access vlan 110
 !
 interface range f0/13-24
 switchport mode access
-switchport access vlan 10
+switchport access vlan 110
 exit
 
 ! ASIGNACION DE ENLACE TRUNCAL CON LOS MLS
@@ -406,21 +406,21 @@ exit
 banner motd $ *** SOLO PERSONAL AUTORIZADO *** $
 
 ! CREACION Y NOMBRAMIENTO DE VLANS
-VLAN 10
+VLAN 110
 name Administracion
-VLAN 20
+VLAN 120
 name Logistica
-VLAN 30
+VLAN 130
 name Finanzas
-VLAN 40
+VLAN 140
 name Marketing
-VLAN 50
+VLAN 150
 name Ventas
-VLAN 60
+VLAN 160
 name Servidores
-VLAN 70
+VLAN 170
 name WifiEjecutivo
-VLAN 80
+VLAN 180
 name WifiCliente
 VLAN 99
 name Management&Native
@@ -429,11 +429,11 @@ exit
 ! ASIGNACION DE VLAN A PCS
 interface range f0/1-12
 switchport mode access
-switchport access vlan 20
+switchport access vlan 120
 !
 interface range f0/13-24
 switchport mode access
-switchport access vlan 20
+switchport access vlan 120
 exit
 
 ! ASIGNACION DE ENLACE TRUNCAL CON LOS MLS
@@ -478,21 +478,21 @@ exit
 banner motd $ *** SOLO PERSONAL AUTORIZADO *** $
 
 ! CREACION Y NOMBRAMIENTO DE VLANS
-VLAN 10
+VLAN 110
 name Administracion
-VLAN 20
+VLAN 120
 name Logistica
-VLAN 30
+VLAN 130
 name Finanzas
-VLAN 40
+VLAN 140
 name Marketing
-VLAN 50
+VLAN 150
 name Ventas
-VLAN 60
+VLAN 160
 name Servidores
-VLAN 70
+VLAN 170
 name WifiEjecutivo
-VLAN 80
+VLAN 180
 name WifiCliente
 VLAN 99
 name Management&Native
@@ -501,11 +501,11 @@ exit
 ! ASIGNACION DE VLAN A PCS
 interface range f0/1-12
 switchport mode access
-switchport access vlan 30
+switchport access vlan 130
 !
 interface range f0/13-24
 switchport mode access
-switchport access vlan 30
+switchport access vlan 130
 exit
 
 ! ASIGNACION DE ENLACE TRUNCAL CON LOS MLS
@@ -550,21 +550,21 @@ exit
 banner motd $ *** SOLO PERSONAL AUTORIZADO *** $
 
 ! CREACION Y NOMBRAMIENTO DE VLANS
-VLAN 10
+VLAN 110
 name Administracion
-VLAN 20
+VLAN 120
 name Logistica
-VLAN 30
+VLAN 130
 name Finanzas
-VLAN 40
+VLAN 140
 name Marketing
-VLAN 50
+VLAN 150
 name Ventas
-VLAN 60
+VLAN 160
 name Servidores
-VLAN 70
+VLAN 170
 name WifiEjecutivo
-VLAN 80
+VLAN 180
 name WifiCliente
 VLAN 99
 name Management&Native
@@ -573,11 +573,11 @@ exit
 ! ASIGNACION DE VLAN A PCS
 interface range f0/1-12
 switchport mode access
-switchport access vlan 40
+switchport access VLAN 140
 !
 interface range f0/13-24
 switchport mode access
-switchport access vlan 40
+switchport access VLAN 140
 exit
 
 ! ASIGNACION DE ENLACE TRUNCAL CON LOS MLS
@@ -622,21 +622,21 @@ exit
 banner motd $ *** SOLO PERSONAL AUTORIZADO *** $
 
 ! CREACION Y NOMBRAMIENTO DE VLANS
-VLAN 10
+VLAN 110
 name Administracion
-VLAN 20
+VLAN 120
 name Logistica
-VLAN 30
+VLAN 130
 name Finanzas
-VLAN 40
+VLAN 140
 name Marketing
-VLAN 50
+VLAN 150
 name Ventas
-VLAN 60
+VLAN 160
 name Servidores
-VLAN 70
+VLAN 170
 name WifiEjecutivo
-VLAN 80
+VLAN 180
 name WifiCliente
 VLAN 99
 name Management&Native
@@ -645,11 +645,11 @@ exit
 ! ASIGNACION DE VLAN A PCS
 interface range f0/1-12
 switchport mode access
-switchport access vlan 50
+switchport access VLAN 150
 !
 interface range f0/13-24
 switchport mode access
-switchport access vlan 50
+switchport access VLAN 150
 exit
 
 ! ASIGNACION DE ENLACE TRUNCAL CON LOS MLS
@@ -694,21 +694,21 @@ exit
 banner motd $ *** SOLO PERSONAL AUTORIZADO *** $
 
 ! CREACION Y NOMBRAMIENTO DE VLANS
-VLAN 10
+VLAN 110
 name Administracion
-VLAN 20
+VLAN 120
 name Logistica
-VLAN 30
+VLAN 130
 name Finanzas
-VLAN 40
+VLAN 140
 name Marketing
-VLAN 50
+VLAN 150
 name Ventas
-VLAN 60
+VLAN 160
 name Servidores
-VLAN 70
+VLAN 170
 name WifiEjecutivo
-VLAN 80
+VLAN 180
 name WifiCliente
 VLAN 99
 name Management&Native
@@ -717,11 +717,11 @@ exit
 ! ASIGNACION DE VLAN A PCS
 interface range f0/1-12
 switchport mode access
-switchport access vlan 60
+switchport access VLAN 160
 !
 interface range f0/13-24
 switchport mode access
-switchport access vlan 60
+switchport access VLAN 160
 exit
 
 ! ASIGNACION DE ENLACE TRUNCAL CON LOS MLS
@@ -766,21 +766,21 @@ exit
 banner motd $ *** SOLO PERSONAL AUTORIZADO *** $
 
 ! CREACION Y NOMBRAMIENTO DE VLANS
-VLAN 10
+VLAN 110
 name Administracion
-VLAN 20
+VLAN 120
 name Logistica
-VLAN 30
+VLAN 130
 name Finanzas
-VLAN 40
+VLAN 140
 name Marketing
-VLAN 50
+VLAN 150
 name Ventas
-VLAN 60
+VLAN 160
 name Servidores
-VLAN 70
+VLAN 170
 name WifiEjecutivo
-VLAN 80
+VLAN 180
 name WifiCliente
 VLAN 99
 name Management&Native
@@ -789,11 +789,11 @@ exit
 ! ASIGNACION DE VLAN A PCS
 interface f0/1
 switchport mode access
-switchport access vlan 80
+switchport access VLAN 180
 !
 interface f0/2
 switchport mode access
-switchport access vlan 70
+switchport access VLAN 170
 exit
 
 ! ASIGNACION DE ENLACE TRUNCAL CON LOS MLS
@@ -877,21 +877,21 @@ banner motd $ *** SOLO PERSONAL AUTORIZADO *** $
 ip routing
 
 ! CREACION Y NOMBRAMIENTO DE VLANS
-VLAN 10
+VLAN 210
 name Administracion
-VLAN 20
+VLAN 220
 name Logistica
-VLAN 30
+VLAN 230
 name Finanzas
-VLAN 40
+VLAN 240
 name Marketing
-VLAN 50
+VLAN 250
 name Ventas
-VLAN 60
+VLAN 260
 name Servidores
-VLAN 70
+VLAN 270
 name WifiEjecutivo
-VLAN 80
+VLAN 280
 name WifiCliente
 VLAN 99
 name Management&Native
@@ -914,28 +914,28 @@ no ip address
 shutdown
 
 ! ASIGNAR IP DE LA MLS EN LAS VLANS
-interface Vlan10
+interface VLAN210
 ip address 172.21.32.1 255.255.255.128
 !
-interface Vlan20
+interface VLAN220
 ip address 172.21.32.129 255.255.255.192
 !
-interface Vlan30
+interface VLAN230
 ip address 172.21.33.1  255.255.255.224
 !
-interface Vlan40
+interface VLAN240
 ip address 172.21.32.193 255.255.255.224
 !
-interface Vlan50
+interface VLAN250
 ip address 172.21.32.225 255.255.255.224
 !
-interface Vlan60
+interface VLAN260
 ip address 172.21.33.81 255.255.255.248
 !
-interface Vlan70
+interface VLAN270
 ip address 172.21.33.65 255.255.255.240
 !
-interface Vlan80
+interface VLAN280
 ip address 172.21.33.33 255.255.255.224
 !
 interface Vlan99
@@ -944,35 +944,35 @@ ip address 172.21.99.3 255.255.255.0
 exit
 
 ! CREAR DHCP PARA CADA VLAN
-ip dhcp pool POOL-VLAN10
+ip dhcp pool POOL-VLAN210
 network 172.21.32.0 255.255.255.128
 default-router 172.21.32.1
 !
-ip dhcp pool POOL-VLAN20
+ip dhcp pool POOL-VLAN220
 network 172.21.32.128 255.255.255.192
 default-router 172.21.32.129
 !
-ip dhcp pool POOL-VLAN30
+ip dhcp pool POOL-VLAN230
 network 172.21.33.0  255.255.255.224
 default-router 172.21.33.1
 !
-ip dhcp pool POOL-VLAN40
+ip dhcp pool POOL-VLAN240
 network 172.21.32.192 255.255.255.224
 default-router 172.21.32.193
 !
-ip dhcp pool POOL-VLAN50
+ip dhcp pool POOL-VLAN250
 network 172.21.32.224 255.255.255.224
 default-router 172.21.32.225
 !
-ip dhcp pool POOL-VLAN60
+ip dhcp pool POOL-VLAN260
 network 172.21.33.80 255.255.255.248
 default-router 172.21.33.81
 !
-ip dhcp pool POOL-VLAN70
+ip dhcp pool POOL-VLAN270
 network 172.21.33.64 255.255.255.240
 default-router 172.21.33.65
 !
-ip dhcp pool POOL-VLAN80
+ip dhcp pool POOL-VLAN280
 network 172.21.33.32 255.255.255.224
 default-router 172.21.33.33
 end
@@ -1002,21 +1002,21 @@ exit
 banner motd $ *** SOLO PERSONAL AUTORIZADO *** $
 
 ! CREACION Y NOMBRAMIENTO DE VLANS
-VLAN 10
+VLAN 210
 name Administracion
-VLAN 20
+VLAN 220
 name Logistica
-VLAN 30
+VLAN 230
 name Finanzas
-VLAN 40
+VLAN 240
 name Marketing
-VLAN 50
+VLAN 250
 name Ventas
-VLAN 60
+VLAN 260
 name Servidores
-VLAN 70
+VLAN 270
 name WifiEjecutivo
-VLAN 80
+VLAN 280
 name WifiCliente
 VLAN 99
 name Management&Native
@@ -1025,11 +1025,11 @@ exit
 ! ASIGNACION DE VLAN A PCS
 interface range f0/1-12
 switchport mode access
-switchport access vlan 10
+switchport access VLAN 210
 !
 interface range f0/13-24
 switchport mode access
-switchport access vlan 10
+switchport access VLAN 210
 exit
 
 ! ASIGNACION DE ENLACE TRUNCAL CON LOS MLS
@@ -1074,21 +1074,21 @@ exit
 banner motd $ *** SOLO PERSONAL AUTORIZADO *** $
 
 ! CREACION Y NOMBRAMIENTO DE VLANS
-VLAN 10
+VLAN 210
 name Administracion
-VLAN 20
+VLAN 220
 name Logistica
-VLAN 30
+VLAN 230
 name Finanzas
-VLAN 40
+VLAN 240
 name Marketing
-VLAN 50
+VLAN 250
 name Ventas
-VLAN 60
+VLAN 260
 name Servidores
-VLAN 70
+VLAN 270
 name WifiEjecutivo
-VLAN 80
+VLAN 280
 name WifiCliente
 VLAN 99
 name Management&Native
@@ -1097,11 +1097,11 @@ exit
 ! ASIGNACION DE VLAN A PCS
 interface range f0/1-12
 switchport mode access
-switchport access vlan 20
+switchport access VLAN 220
 !
 interface range f0/13-24
 switchport mode access
-switchport access vlan 20
+switchport access VLAN 220
 exit
 
 ! ASIGNACION DE ENLACE TRUNCAL CON LOS MLS
@@ -1146,21 +1146,21 @@ exit
 banner motd $ *** SOLO PERSONAL AUTORIZADO *** $
 
 ! CREACION Y NOMBRAMIENTO DE VLANS
-VLAN 10
+VLAN 210
 name Administracion
-VLAN 20
+VLAN 220
 name Logistica
-VLAN 30
+VLAN 230
 name Finanzas
-VLAN 40
+VLAN 240
 name Marketing
-VLAN 50
+VLAN 250
 name Ventas
-VLAN 60
+VLAN 260
 name Servidores
-VLAN 70
+VLAN 270
 name WifiEjecutivo
-VLAN 80
+VLAN 280
 name WifiCliente
 VLAN 99
 name Management&Native
@@ -1169,11 +1169,11 @@ exit
 ! ASIGNACION DE VLAN A PCS
 interface range f0/1-12
 switchport mode access
-switchport access vlan 30
+switchport access VLAN 230
 !
 interface range f0/13-24
 switchport mode access
-switchport access vlan 30
+switchport access VLAN 230
 exit
 
 ! ASIGNACION DE ENLACE TRUNCAL CON LOS MLS
@@ -1218,21 +1218,21 @@ exit
 banner motd $ *** SOLO PERSONAL AUTORIZADO *** $
 
 ! CREACION Y NOMBRAMIENTO DE VLANS
-VLAN 10
+VLAN 210
 name Administracion
-VLAN 20
+VLAN 220
 name Logistica
-VLAN 30
+VLAN 230
 name Finanzas
-VLAN 40
+VLAN 240
 name Marketing
-VLAN 50
+VLAN 250
 name Ventas
-VLAN 60
+VLAN 260
 name Servidores
-VLAN 70
+VLAN 270
 name WifiEjecutivo
-VLAN 80
+VLAN 280
 name WifiCliente
 VLAN 99
 name Management&Native
@@ -1241,11 +1241,11 @@ exit
 ! ASIGNACION DE VLAN A PCS
 interface range f0/1-12
 switchport mode access
-switchport access vlan 40
+switchport access VLAN 240
 !
 interface range f0/13-24
 switchport mode access
-switchport access vlan 40
+switchport access VLAN 240
 exit
 
 ! ASIGNACION DE ENLACE TRUNCAL CON LOS MLS
@@ -1290,21 +1290,21 @@ exit
 banner motd $ *** SOLO PERSONAL AUTORIZADO *** $
 
 ! CREACION Y NOMBRAMIENTO DE VLANS
-VLAN 10
+VLAN 210
 name Administracion
-VLAN 20
+VLAN 220
 name Logistica
-VLAN 30
+VLAN 230
 name Finanzas
-VLAN 40
+VLAN 240
 name Marketing
-VLAN 50
+VLAN 250
 name Ventas
-VLAN 60
+VLAN 260
 name Servidores
-VLAN 70
+VLAN 270
 name WifiEjecutivo
-VLAN 80
+VLAN 280
 name WifiCliente
 VLAN 99
 name Management&Native
@@ -1313,11 +1313,11 @@ exit
 ! ASIGNACION DE VLAN A PCS
 interface range f0/1-12
 switchport mode access
-switchport access vlan 50
+switchport access VLAN 250
 !
 interface range f0/13-24
 switchport mode access
-switchport access vlan 50
+switchport access VLAN 250
 exit
 
 ! ASIGNACION DE ENLACE TRUNCAL CON LOS MLS
@@ -1362,21 +1362,21 @@ exit
 banner motd $ *** SOLO PERSONAL AUTORIZADO *** $
 
 ! CREACION Y NOMBRAMIENTO DE VLANS
-VLAN 10
+VLAN 210
 name Administracion
-VLAN 20
+VLAN 220
 name Logistica
-VLAN 30
+VLAN 230
 name Finanzas
-VLAN 40
+VLAN 240
 name Marketing
-VLAN 50
+VLAN 250
 name Ventas
-VLAN 60
+VLAN 260
 name Servidores
-VLAN 70
+VLAN 270
 name WifiEjecutivo
-VLAN 80
+VLAN 280
 name WifiCliente
 VLAN 99
 name Management&Native
@@ -1385,11 +1385,11 @@ exit
 ! ASIGNACION DE VLAN A PCS
 interface range f0/1-12
 switchport mode access
-switchport access vlan 60
+switchport access VLAN 260
 !
 interface range f0/13-24
 switchport mode access
-switchport access vlan 60
+switchport access VLAN 260
 exit
 
 ! ASIGNACION DE ENLACE TRUNCAL CON LOS MLS
@@ -1434,21 +1434,21 @@ exit
 banner motd $ *** SOLO PERSONAL AUTORIZADO *** $
 
 ! CREACION Y NOMBRAMIENTO DE VLANS
-VLAN 10
+VLAN 210
 name Administracion
-VLAN 20
+VLAN 220
 name Logistica
-VLAN 30
+VLAN 230
 name Finanzas
-VLAN 40
+VLAN 240
 name Marketing
-VLAN 50
+VLAN 250
 name Ventas
-VLAN 60
+VLAN 260
 name Servidores
-VLAN 70
+VLAN 270
 name WifiEjecutivo
-VLAN 80
+VLAN 280
 name WifiCliente
 VLAN 99
 name Management&Native
@@ -1457,11 +1457,11 @@ exit
 ! ASIGNACION DE VLAN A PCS
 interface f0/1
 switchport mode access
-switchport access vlan 70
+switchport access VLAN 270
 !
 interface f0/2
 switchport mode access
-switchport access vlan 80
+switchport access VLAN 280
 exit
 
 ! ASIGNACION DE ENLACE TRUNCAL CON LOS MLS
@@ -1545,21 +1545,21 @@ banner motd $ *** SOLO PERSONAL AUTORIZADO *** $
 ip routing
 
 ! CREACION Y NOMBRAMIENTO DE VLANS
-VLAN 10
+VLAN 310
 name Administracion
-VLAN 20
+VLAN 320
 name Logistica
-VLAN 30
+VLAN 330
 name Finanzas
-VLAN 40
+VLAN 340
 name Marketing
-VLAN 50
+VLAN 350
 name Ventas
-VLAN 60
+VLAN 360
 name Servidores
-VLAN 70
+VLAN 370
 name WifiEjecutivo
-VLAN 80
+VLAN 380
 name WifiCliente
 VLAN 99
 name Management&Native
@@ -1582,28 +1582,28 @@ no ip address
 shutdown
 
 ! ASIGNAR IP DE LA MLS EN LAS VLANS
-interface Vlan10
+interface VLAN310
 ip address 172.21.48.1 255.255.255.192
 !
-interface Vlan20
+interface VLAN320
 ip address 172.21.48.65 255.255.255.224
 !
-interface Vlan30
+interface VLAN330
 ip address 172.21.48.161 255.255.255.240
 !
-interface Vlan40
+interface VLAN340
 ip address 172.21.48.97 255.255.255.224
 !
-interface Vlan50
+interface VLAN350
 ip address 172.21.48.129 255.255.255.224
 !
-interface Vlan60
+interface VLAN360
 ip address 172.21.48.201 255.255.255.248
 !
-interface Vlan70
+interface VLAN370
 ip address 172.21.48.193 255.255.255.248
 !
-interface Vlan80
+interface VLAN380
 ip address 172.21.48.177 255.255.255.240
 !
 interface Vlan99
@@ -1612,35 +1612,35 @@ ip address 172.21.99.4 255.255.255.0
 exit
 
 ! CREAR DHCP PARA CADA VLAN
-ip dhcp pool POOL-VLAN10
+ip dhcp pool POOL-VLAN310
 network 172.21.48.0 255.255.255.192
 default-router 172.21.48.1
 !
-ip dhcp pool POOL-VLAN20
+ip dhcp pool POOL-VLAN320
 network 172.21.48.64 255.255.255.224
 default-router 172.21.48.65
 !
-ip dhcp pool POOL-VLAN30
+ip dhcp pool POOL-VLAN330
 network 172.21.48.160 255.255.255.240
 default-router 172.21.48.161
 !
-ip dhcp pool POOL-VLAN40
+ip dhcp pool POOL-VLAN340
 network 172.21.48.96 255.255.255.224
 default-router 172.21.48.97
 !
-ip dhcp pool POOL-VLAN50
+ip dhcp pool POOL-VLAN350
 network 172.21.48.128 255.255.255.224
 default-router 172.21.48.129
 !
-ip dhcp pool POOL-VLAN60
+ip dhcp pool POOL-VLAN360
 network 172.21.48.200 255.255.255.248
 default-router 172.21.48.201
 !
-ip dhcp pool POOL-VLAN70
+ip dhcp pool POOL-VLAN370
 network 172.21.48.192 255.255.255.248
 default-router 172.21.48.193
 !
-ip dhcp pool POOL-VLAN80
+ip dhcp pool POOL-VLAN380
 network 172.21.48.176 255.255.255.240
 default-router 172.21.48.177
 end
@@ -1670,21 +1670,21 @@ exit
 banner motd $ *** SOLO PERSONAL AUTORIZADO *** $
 
 ! CREACION Y NOMBRAMIENTO DE VLANS
-VLAN 10
+VLAN 310
 name Administracion
-VLAN 20
+VLAN 320
 name Logistica
-VLAN 30
+VLAN 330
 name Finanzas
-VLAN 40
+VLAN 340
 name Marketing
-VLAN 50
+VLAN 350
 name Ventas
-VLAN 60
+VLAN 360
 name Servidores
-VLAN 70
+VLAN 370
 name WifiEjecutivo
-VLAN 80
+VLAN 380
 name WifiCliente
 VLAN 99
 name Management&Native
@@ -1693,11 +1693,11 @@ exit
 ! ASIGNACION DE VLAN A PCS
 interface range f0/1-12
 switchport mode access
-switchport access vlan 10
+switchport access VLAN 310
 !
 interface range f0/13-24
 switchport mode access
-switchport access vlan 10
+switchport access VLAN 310
 exit
 
 ! ASIGNACION DE ENLACE TRUNCAL CON LOS MLS
@@ -1742,21 +1742,21 @@ exit
 banner motd $ *** SOLO PERSONAL AUTORIZADO *** $
 
 ! CREACION Y NOMBRAMIENTO DE VLANS
-VLAN 10
+VLAN 310
 name Administracion
-VLAN 20
+VLAN 320
 name Logistica
-VLAN 30
+VLAN 330
 name Finanzas
-VLAN 40
+VLAN 340
 name Marketing
-VLAN 50
+VLAN 350
 name Ventas
-VLAN 60
+VLAN 360
 name Servidores
-VLAN 70
+VLAN 370
 name WifiEjecutivo
-VLAN 80
+VLAN 380
 name WifiCliente
 VLAN 99
 name Management&Native
@@ -1765,11 +1765,11 @@ exit
 ! ASIGNACION DE VLAN A PCS
 interface range f0/1-12
 switchport mode access
-switchport access vlan 20
+switchport access VLAN 320
 !
 interface range f0/13-24
 switchport mode access
-switchport access vlan 20
+switchport access VLAN 320
 exit
 
 ! ASIGNACION DE ENLACE TRUNCAL CON LOS MLS
@@ -1814,21 +1814,21 @@ exit
 banner motd $ *** SOLO PERSONAL AUTORIZADO *** $
 
 ! CREACION Y NOMBRAMIENTO DE VLANS
-VLAN 10
+VLAN 310
 name Administracion
-VLAN 20
+VLAN 320
 name Logistica
-VLAN 30
+VLAN 330
 name Finanzas
-VLAN 40
+VLAN 340
 name Marketing
-VLAN 50
+VLAN 350
 name Ventas
-VLAN 60
+VLAN 360
 name Servidores
-VLAN 70
+VLAN 370
 name WifiEjecutivo
-VLAN 80
+VLAN 380
 name WifiCliente
 VLAN 99
 name Management&Native
@@ -1837,11 +1837,11 @@ exit
 ! ASIGNACION DE VLAN A PCS
 interface range f0/1-12
 switchport mode access
-switchport access vlan 30
+switchport access VLAN 330
 !
 interface range f0/13-24
 switchport mode access
-switchport access vlan 30
+switchport access VLAN 330
 exit
 
 ! ASIGNACION DE ENLACE TRUNCAL CON LOS MLS
@@ -1886,21 +1886,21 @@ exit
 banner motd $ *** SOLO PERSONAL AUTORIZADO *** $
 
 ! CREACION Y NOMBRAMIENTO DE VLANS
-VLAN 10
+VLAN 310
 name Administracion
-VLAN 20
+VLAN 320
 name Logistica
-VLAN 30
+VLAN 330
 name Finanzas
-VLAN 40
+VLAN 340
 name Marketing
-VLAN 50
+VLAN 350
 name Ventas
-VLAN 60
+VLAN 360
 name Servidores
-VLAN 70
+VLAN 370
 name WifiEjecutivo
-VLAN 80
+VLAN 380
 name WifiCliente
 VLAN 99
 name Management&Native
@@ -1909,11 +1909,11 @@ exit
 ! ASIGNACION DE VLAN A PCS
 interface range f0/1-12
 switchport mode access
-switchport access vlan 40
+switchport access VLAN 340
 !
 interface range f0/13-24
 switchport mode access
-switchport access vlan 40
+switchport access VLAN 340
 exit
 
 ! ASIGNACION DE ENLACE TRUNCAL CON LOS MLS
@@ -1958,21 +1958,21 @@ exit
 banner motd $ *** SOLO PERSONAL AUTORIZADO *** $
 
 ! CREACION Y NOMBRAMIENTO DE VLANS
-VLAN 10
+VLAN 310
 name Administracion
-VLAN 20
+VLAN 320
 name Logistica
-VLAN 30
+VLAN 330
 name Finanzas
-VLAN 40
+VLAN 340
 name Marketing
-VLAN 50
+VLAN 350
 name Ventas
-VLAN 60
+VLAN 360
 name Servidores
-VLAN 70
+VLAN 370
 name WifiEjecutivo
-VLAN 80
+VLAN 380
 name WifiCliente
 VLAN 99
 name Management&Native
@@ -1981,11 +1981,11 @@ exit
 ! ASIGNACION DE VLAN A PCS
 interface range f0/1-12
 switchport mode access
-switchport access vlan 50
+switchport access VLAN 350
 !
 interface range f0/13-24
 switchport mode access
-switchport access vlan 50
+switchport access VLAN 350
 exit
 
 ! ASIGNACION DE ENLACE TRUNCAL CON LOS MLS
@@ -2030,21 +2030,21 @@ exit
 banner motd $ *** SOLO PERSONAL AUTORIZADO *** $
 
 ! CREACION Y NOMBRAMIENTO DE VLANS
-VLAN 10
+VLAN 310
 name Administracion
-VLAN 20
+VLAN 320
 name Logistica
-VLAN 30
+VLAN 330
 name Finanzas
-VLAN 40
+VLAN 340
 name Marketing
-VLAN 50
+VLAN 350
 name Ventas
-VLAN 60
+VLAN 360
 name Servidores
-VLAN 70
+VLAN 370
 name WifiEjecutivo
-VLAN 80
+VLAN 380
 name WifiCliente
 VLAN 99
 name Management&Native
@@ -2053,11 +2053,11 @@ exit
 ! ASIGNACION DE VLAN A PCS
 interface f0/1
 switchport mode access
-switchport access vlan 80
+switchport access VLAN 380
 !
 interface f0/2
 switchport mode access
-switchport access vlan 70
+switchport access VLAN 370
 exit
 
 ! ASIGNACION DE ENLACE TRUNCAL CON LOS MLS
@@ -2102,21 +2102,21 @@ exit
 banner motd $ *** SOLO PERSONAL AUTORIZADO *** $
 
 ! CREACION Y NOMBRAMIENTO DE VLANS
-VLAN 10
+VLAN 310
 name Administracion
-VLAN 20
+VLAN 320
 name Logistica
-VLAN 30
+VLAN 330
 name Finanzas
-VLAN 40
+VLAN 340
 name Marketing
-VLAN 50
+VLAN 350
 name Ventas
-VLAN 60
+VLAN 360
 name Servidores
-VLAN 70
+VLAN 370
 name WifiEjecutivo
-VLAN 80
+VLAN 380
 name WifiCliente
 VLAN 99
 name Management&Native
@@ -2125,11 +2125,11 @@ exit
 ! ASIGNACION DE VLAN A PCS
 interface range f0/1-12
 switchport mode access
-switchport access vlan 60
+switchport access VLAN 360
 !
 interface range f0/13-24
 switchport mode access
-switchport access vlan 60
+switchport access VLAN 360
 exit
 
 ! ASIGNACION DE ENLACE TRUNCAL CON LOS MLS
@@ -2213,21 +2213,21 @@ banner motd $ *** SOLO PERSONAL AUTORIZADO *** $
 ip routing
 
 ! CREACION Y NOMBRAMIENTO DE VLANS
-VLAN 10
+VLAN 410
 name Administracion
-VLAN 20
+VLAN 420
 name Logistica
-VLAN 30
+VLAN 430
 name Finanzas
-VLAN 40
+VLAN 440
 name Marketing
-VLAN 50
+VLAN 450
 name Ventas
-VLAN 60
+VLAN 460
 name Servidores
-VLAN 70
+VLAN 470
 name WifiEjecutivo
-VLAN 80
+VLAN 480
 name WifiCliente
 VLAN 99
 name Management&Native
@@ -2250,28 +2250,28 @@ no ip address
 shutdown
 
 ! ASIGNAR IP DE LA MLS EN LAS VLANS
-interface Vlan10
+interface VLAN410
 ip address 172.21.64.1 255.255.255.192
 !
-interface Vlan20
+interface VLAN420
 ip address 172.21.64.65 255.255.255.224
 !
-interface Vlan30
+interface VLAN430
 ip address 172.21.64.145 255.255.255.240
 !
-interface Vlan40
+interface VLAN440
 ip address 172.21.64.97 255.255.255.224
 !
-interface Vlan50
+interface VLAN450
 ip address 172.21.64.129 255.255.255.240
 !
-interface Vlan60
+interface VLAN460
 ip address 172.21.64.193 255.255.255.248
 !
-interface Vlan70
+interface VLAN470
 ip address 172.21.64.177 255.255.255.240
 !
-interface Vlan80
+interface VLAN480
 ip address 172.21.64.161 255.255.255.240
 !
 interface Vlan99
@@ -2280,35 +2280,35 @@ ip address 172.21.99.5 255.255.255.0
 exit
 
 ! CREAR DHCP PARA CADA VLAN
-ip dhcp pool POOL-VLAN10
+ip dhcp pool POOL-VLAN410
 network 172.21.64.0 255.255.255.192
 default-router 172.21.64.1
 !
-ip dhcp pool POOL-VLAN20
+ip dhcp pool POOL-VLAN420
 network 172.21.64.64 255.255.255.224
 default-router 172.21.64.65
 !
-ip dhcp pool POOL-VLAN30
+ip dhcp pool POOL-VLAN430
 network 172.21.64.144 255.255.255.240
 default-router 172.21.64.145
 !
-ip dhcp pool POOL-VLAN40
+ip dhcp pool POOL-VLAN440
 network 172.21.64.96 255.255.255.224
 default-router 172.21.64.97
 !
-ip dhcp pool POOL-VLAN50
+ip dhcp pool POOL-VLAN450
 network 172.21.64.128 255.255.255.240
 default-router 172.21.64.129
 !
-ip dhcp pool POOL-VLAN60
+ip dhcp pool POOL-VLAN460
 network 172.21.64.192 255.255.255.248
 default-router 172.21.64.193
 !
-ip dhcp pool POOL-VLAN70
+ip dhcp pool POOL-VLAN470
 network 172.21.64.176 255.255.255.240
 default-router 172.21.64.177
 !
-ip dhcp pool POOL-VLAN80
+ip dhcp pool POOL-VLAN480
 network 172.21.64.160 255.255.255.240
 default-router 172.21.64.161
 end
@@ -2338,21 +2338,21 @@ exit
 banner motd $ *** SOLO PERSONAL AUTORIZADO *** $
 
 ! CREACION Y NOMBRAMIENTO DE VLANS
-VLAN 10
+VLAN 410
 name Administracion
-VLAN 20
+VLAN 420
 name Logistica
-VLAN 30
+VLAN 430
 name Finanzas
-VLAN 40
+VLAN 440
 name Marketing
-VLAN 50
+VLAN 450
 name Ventas
-VLAN 60
+VLAN 460
 name Servidores
-VLAN 70
+VLAN 470
 name WifiEjecutivo
-VLAN 80
+VLAN 480
 name WifiCliente
 VLAN 99
 name Management&Native
@@ -2361,11 +2361,11 @@ exit
 ! ASIGNACION DE VLAN A PCS
 interface range f0/1-12
 switchport mode access
-switchport access vlan 10
+switchport access VLAN 410
 !
 interface range f0/13-24
 switchport mode access
-switchport access vlan 10
+switchport access VLAN 410
 exit
 
 ! ASIGNACION DE ENLACE TRUNCAL CON LOS MLS
@@ -2410,21 +2410,21 @@ exit
 banner motd $ *** SOLO PERSONAL AUTORIZADO *** $
 
 ! CREACION Y NOMBRAMIENTO DE VLANS
-VLAN 10
+VLAN 410
 name Administracion
-VLAN 20
+VLAN 420
 name Logistica
-VLAN 30
+VLAN 430
 name Finanzas
-VLAN 40
+VLAN 440
 name Marketing
-VLAN 50
+VLAN 450
 name Ventas
-VLAN 60
+VLAN 460
 name Servidores
-VLAN 70
+VLAN 470
 name WifiEjecutivo
-VLAN 80
+VLAN 480
 name WifiCliente
 VLAN 99
 name Management&Native
@@ -2433,11 +2433,11 @@ exit
 ! ASIGNACION DE VLAN A PCS
 interface range f0/1-12
 switchport mode access
-switchport access vlan 20
+switchport access VLAN 420
 !
 interface range f0/13-24
 switchport mode access
-switchport access vlan 20
+switchport access VLAN 420
 exit
 
 ! ASIGNACION DE ENLACE TRUNCAL CON LOS MLS
@@ -2482,21 +2482,21 @@ exit
 banner motd $ *** SOLO PERSONAL AUTORIZADO *** $
 
 ! CREACION Y NOMBRAMIENTO DE VLANS
-VLAN 10
+VLAN 410
 name Administracion
-VLAN 20
+VLAN 420
 name Logistica
-VLAN 30
+VLAN 430
 name Finanzas
-VLAN 40
+VLAN 440
 name Marketing
-VLAN 50
+VLAN 450
 name Ventas
-VLAN 60
+VLAN 460
 name Servidores
-VLAN 70
+VLAN 470
 name WifiEjecutivo
-VLAN 80
+VLAN 480
 name WifiCliente
 VLAN 99
 name Management&Native
@@ -2505,11 +2505,11 @@ exit
 ! ASIGNACION DE VLAN A PCS
 interface range f0/1-12
 switchport mode access
-switchport access vlan 30
+switchport access VLAN 430
 !
 interface range f0/13-24
 switchport mode access
-switchport access vlan 30
+switchport access VLAN 430
 exit
 
 ! ASIGNACION DE ENLACE TRUNCAL CON LOS MLS
@@ -2554,21 +2554,21 @@ exit
 banner motd $ *** SOLO PERSONAL AUTORIZADO *** $
 
 ! CREACION Y NOMBRAMIENTO DE VLANS
-VLAN 10
+VLAN 410
 name Administracion
-VLAN 20
+VLAN 420
 name Logistica
-VLAN 30
+VLAN 430
 name Finanzas
-VLAN 40
+VLAN 440
 name Marketing
-VLAN 50
+VLAN 450
 name Ventas
-VLAN 60
+VLAN 460
 name Servidores
-VLAN 70
+VLAN 470
 name WifiEjecutivo
-VLAN 80
+VLAN 480
 name WifiCliente
 VLAN 99
 name Management&Native
@@ -2577,11 +2577,11 @@ exit
 ! ASIGNACION DE VLAN A PCS
 interface range f0/1-12
 switchport mode access
-switchport access vlan 40
+switchport access VLAN 440
 !
 interface range f0/13-24
 switchport mode access
-switchport access vlan 40
+switchport access VLAN 440
 exit
 
 ! ASIGNACION DE ENLACE TRUNCAL CON LOS MLS
@@ -2626,21 +2626,21 @@ exit
 banner motd $ *** SOLO PERSONAL AUTORIZADO *** $
 
 ! CREACION Y NOMBRAMIENTO DE VLANS
-VLAN 10
+VLAN 410
 name Administracion
-VLAN 20
+VLAN 420
 name Logistica
-VLAN 30
+VLAN 430
 name Finanzas
-VLAN 40
+VLAN 440
 name Marketing
-VLAN 50
+VLAN 450
 name Ventas
-VLAN 60
+VLAN 460
 name Servidores
-VLAN 70
+VLAN 470
 name WifiEjecutivo
-VLAN 80
+VLAN 480
 name WifiCliente
 VLAN 99
 name Management&Native
@@ -2649,11 +2649,11 @@ exit
 ! ASIGNACION DE VLAN A PCS
 interface range f0/1-12
 switchport mode access
-switchport access vlan 50
+switchport access VLAN 450
 !
 interface range f0/13-24
 switchport mode access
-switchport access vlan 50
+switchport access VLAN 450
 exit
 
 ! ASIGNACION DE ENLACE TRUNCAL CON LOS MLS
@@ -2698,21 +2698,21 @@ exit
 banner motd $ *** SOLO PERSONAL AUTORIZADO *** $
 
 ! CREACION Y NOMBRAMIENTO DE VLANS
-VLAN 10
+VLAN 410
 name Administracion
-VLAN 20
+VLAN 420
 name Logistica
-VLAN 30
+VLAN 430
 name Finanzas
-VLAN 40
+VLAN 440
 name Marketing
-VLAN 50
+VLAN 450
 name Ventas
-VLAN 60
+VLAN 460
 name Servidores
-VLAN 70
+VLAN 470
 name WifiEjecutivo
-VLAN 80
+VLAN 480
 name WifiCliente
 VLAN 99
 name Management&Native
@@ -2721,11 +2721,11 @@ exit
 ! ASIGNACION DE VLAN A PCS
 interface f0/1
 switchport mode access
-switchport access vlan 80
+switchport access VLAN 480
 !
 interface f0/2
 switchport mode access
-switchport access vlan 70
+switchport access VLAN 470
 exit
 
 ! ASIGNACION DE ENLACE TRUNCAL CON LOS MLS
@@ -2770,21 +2770,21 @@ exit
 banner motd $ *** SOLO PERSONAL AUTORIZADO *** $
 
 ! CREACION Y NOMBRAMIENTO DE VLANS
-VLAN 10
+VLAN 410
 name Administracion
-VLAN 20
+VLAN 420
 name Logistica
-VLAN 30
+VLAN 430
 name Finanzas
-VLAN 40
+VLAN 440
 name Marketing
-VLAN 50
+VLAN 450
 name Ventas
-VLAN 60
+VLAN 460
 name Servidores
-VLAN 70
+VLAN 470
 name WifiEjecutivo
-VLAN 80
+VLAN 480
 name WifiCliente
 VLAN 99
 name Management&Native
@@ -2793,11 +2793,11 @@ exit
 ! ASIGNACION DE VLAN A PCS
 interface range f0/1-12
 switchport mode access
-switchport access vlan 60
+switchport access VLAN 460
 !
 interface range f0/13-24
 switchport mode access
-switchport access vlan 60
+switchport access VLAN 460
 exit
 
 ! ASIGNACION DE ENLACE TRUNCAL CON LOS MLS
@@ -2881,21 +2881,21 @@ banner motd $ *** SOLO PERSONAL AUTORIZADO *** $
 ip routing
 
 ! CREACION Y NOMBRAMIENTO DE VLANS
-VLAN 10
+VLAN 510
 name Administracion
-VLAN 20
+VLAN 520
 name Logistica
-VLAN 30
+VLAN 530
 name Finanzas
-VLAN 40
+VLAN 540
 name Marketing
-VLAN 50
+VLAN 550
 name Ventas
-VLAN 60
+VLAN 560
 name Servidores
-VLAN 70
+VLAN 570
 name WifiEjecutivo
-VLAN 80
+VLAN 580
 name WifiCliente
 VLAN 99
 name Management&Native
@@ -2918,28 +2918,28 @@ no ip address
 shutdown
 
 ! ASIGNAR IP DE LA MLS EN LAS VLANS
-interface Vlan10
+interface VLAN510
 ip address 172.21.80.1 255.255.255.192
 !
-interface Vlan20
+interface VLAN520
 ip address 172.21.80.65 255.255.255.224
 !
-interface Vlan30
+interface VLAN 530
 ip address 172.21.80.145 255.255.255.240
 !
-interface Vlan40
+interface VLAN540
 ip address 172.21.80.97 255.255.255.224
 !
-interface Vlan50
+interface VLAN550
 ip address 172.21.80.129 255.255.255.240
 !
-interface Vlan60
+interface VLAN560
 ip address 172.21.80.185 255.255.255.248
 !
-interface Vlan70
+interface VLAN570
 ip address 172.21.80.177 255.255.255.248
 !
-interface Vlan80
+interface VLAN580
 ip address 172.21.80.161 255.255.255.240
 !
 interface Vlan99
@@ -2948,35 +2948,35 @@ ip address 172.21.99.6 255.255.255.0
 exit
 
 ! CREAR DHCP PARA CADA VLAN
-ip dhcp pool POOL-VLAN10
+ip dhcp pool POOL-VLAN510
 network 172.21.80.0 255.255.255.192
 default-router 172.21.80.1
 !
-ip dhcp pool POOL-VLAN20
+ip dhcp pool POOL-VLAN520
 network 172.21.80.64 255.255.255.224
 default-router 172.21.80.65
 !
-ip dhcp pool POOL-VLAN30
+ip dhcp pool POOL-VLAN530
 network 172.21.80.144 255.255.255.240
 default-router 172.21.80.145
 !
-ip dhcp pool POOL-VLAN40
+ip dhcp pool POOL-VLAN540
 network 172.21.80.96 255.255.255.224
 default-router 172.21.80.97
 !
-ip dhcp pool POOL-VLAN50
+ip dhcp pool POOL-VLAN550
 network 172.21.80.128 255.255.255.240
 default-router 172.21.80.129
 !
-ip dhcp pool POOL-VLAN60
+ip dhcp pool POOL-VLAN560
 network 172.21.80.184 255.255.255.248
 default-router 172.21.80.185
 !
-ip dhcp pool POOL-VLAN70
+ip dhcp pool POOL-VLAN570
 network 172.21.80.176 255.255.255.248
 default-router 172.21.64.177
 !
-ip dhcp pool POOL-VLAN80
+ip dhcp pool POOL-VLAN580
 network 172.21.80.160 255.255.255.240
 default-router 172.21.64.161
 end
@@ -3006,21 +3006,21 @@ exit
 banner motd $ *** SOLO PERSONAL AUTORIZADO *** $
 
 ! CREACION Y NOMBRAMIENTO DE VLANS
-VLAN 10
+VLAN 510
 name Administracion
-VLAN 20
+VLAN 520
 name Logistica
-VLAN 30
+VLAN 530
 name Finanzas
-VLAN 40
+VLAN 540
 name Marketing
-VLAN 50
+VLAN 550
 name Ventas
-VLAN 60
+VLAN 560
 name Servidores
-VLAN 70
+VLAN 570
 name WifiEjecutivo
-VLAN 80
+VLAN 580
 name WifiCliente
 VLAN 99
 name Management&Native
@@ -3029,11 +3029,11 @@ exit
 ! ASIGNACION DE VLAN A PCS
 interface range f0/1-12
 switchport mode access
-switchport access vlan 10
+switchport access VLAN 510
 !
 interface range f0/13-24
 switchport mode access
-switchport access vlan 10
+switchport access VLAN 510
 exit
 
 ! ASIGNACION DE ENLACE TRUNCAL CON LOS MLS
@@ -3078,21 +3078,21 @@ exit
 banner motd $ *** SOLO PERSONAL AUTORIZADO *** $
 
 ! CREACION Y NOMBRAMIENTO DE VLANS
-VLAN 10
+VLAN 510
 name Administracion
-VLAN 20
+VLAN 520
 name Logistica
-VLAN 30
+VLAN 530
 name Finanzas
-VLAN 40
+VLAN 540
 name Marketing
-VLAN 50
+VLAN 550
 name Ventas
-VLAN 60
+VLAN 560
 name Servidores
-VLAN 70
+VLAN 570
 name WifiEjecutivo
-VLAN 80
+VLAN 580
 name WifiCliente
 VLAN 99
 name Management&Native
@@ -3101,11 +3101,11 @@ exit
 ! ASIGNACION DE VLAN A PCS
 interface range f0/1-12
 switchport mode access
-switchport access vlan 20
+switchport access VLAN 520
 !
 interface range f0/13-24
 switchport mode access
-switchport access vlan 20
+switchport access VLAN 520
 exit
 
 ! ASIGNACION DE ENLACE TRUNCAL CON LOS MLS
@@ -3150,21 +3150,21 @@ exit
 banner motd $ *** SOLO PERSONAL AUTORIZADO *** $
 
 ! CREACION Y NOMBRAMIENTO DE VLANS
-VLAN 10
+VLAN 510
 name Administracion
-VLAN 20
+VLAN 520
 name Logistica
-VLAN 30
+VLAN 530
 name Finanzas
-VLAN 40
+VLAN 540
 name Marketing
-VLAN 50
+VLAN 550
 name Ventas
-VLAN 60
+VLAN 560
 name Servidores
-VLAN 70
+VLAN 570
 name WifiEjecutivo
-VLAN 80
+VLAN 580
 name WifiCliente
 VLAN 99
 name Management&Native
@@ -3173,11 +3173,11 @@ exit
 ! ASIGNACION DE VLAN A PCS
 interface range f0/1-12
 switchport mode access
-switchport access vlan 30
+switchport access VLAN 530
 !
 interface range f0/13-24
 switchport mode access
-switchport access vlan 30
+switchport access VLAN 530
 exit
 
 ! ASIGNACION DE ENLACE TRUNCAL CON LOS MLS
@@ -3222,21 +3222,21 @@ exit
 banner motd $ *** SOLO PERSONAL AUTORIZADO *** $
 
 ! CREACION Y NOMBRAMIENTO DE VLANS
-VLAN 10
+VLAN 510
 name Administracion
-VLAN 20
+VLAN 520
 name Logistica
-VLAN 30
+VLAN 530
 name Finanzas
-VLAN 40
+VLAN 540
 name Marketing
-VLAN 50
+VLAN 550
 name Ventas
-VLAN 60
+VLAN 560
 name Servidores
-VLAN 70
+VLAN 570
 name WifiEjecutivo
-VLAN 80
+VLAN 580
 name WifiCliente
 VLAN 99
 name Management&Native
@@ -3245,11 +3245,11 @@ exit
 ! ASIGNACION DE VLAN A PCS
 interface range f0/1-12
 switchport mode access
-switchport access vlan 40
+switchport access VLAN 540
 !
 interface range f0/13-24
 switchport mode access
-switchport access vlan 40
+switchport access VLAN 540
 exit
 
 ! ASIGNACION DE ENLACE TRUNCAL CON LOS MLS
@@ -3294,21 +3294,21 @@ exit
 banner motd $ *** SOLO PERSONAL AUTORIZADO *** $
 
 ! CREACION Y NOMBRAMIENTO DE VLANS
-VLAN 10
+VLAN 510
 name Administracion
-VLAN 20
+VLAN 520
 name Logistica
-VLAN 30
+VLAN 530
 name Finanzas
-VLAN 40
+VLAN 540
 name Marketing
-VLAN 50
+VLAN 550
 name Ventas
-VLAN 60
+VLAN 560
 name Servidores
-VLAN 70
+VLAN 570
 name WifiEjecutivo
-VLAN 80
+VLAN 580
 name WifiCliente
 VLAN 99
 name Management&Native
@@ -3317,11 +3317,11 @@ exit
 ! ASIGNACION DE VLAN A PCS
 interface range f0/1-12
 switchport mode access
-switchport access vlan 50
+switchport access VLAN 550
 !
 interface range f0/13-24
 switchport mode access
-switchport access vlan 50
+switchport access VLAN 550
 exit
 
 ! ASIGNACION DE ENLACE TRUNCAL CON LOS MLS
@@ -3366,21 +3366,21 @@ exit
 banner motd $ *** SOLO PERSONAL AUTORIZADO *** $
 
 ! CREACION Y NOMBRAMIENTO DE VLANS
-VLAN 10
+VLAN 510
 name Administracion
-VLAN 20
+VLAN 520
 name Logistica
-VLAN 30
+VLAN 530
 name Finanzas
-VLAN 40
+VLAN 540
 name Marketing
-VLAN 50
+VLAN 550
 name Ventas
-VLAN 60
+VLAN 560
 name Servidores
-VLAN 70
+VLAN 570
 name WifiEjecutivo
-VLAN 80
+VLAN 580
 name WifiCliente
 VLAN 99
 name Management&Native
@@ -3389,11 +3389,11 @@ exit
 ! ASIGNACION DE VLAN A PCS
 interface f0/1
 switchport mode access
-switchport access vlan 80
+switchport access VLAN 580
 !
 interface f0/2
 switchport mode access
-switchport access vlan 70
+switchport access VLAN 570
 exit
 
 ! ASIGNACION DE ENLACE TRUNCAL CON LOS MLS
@@ -3438,21 +3438,21 @@ exit
 banner motd $ *** SOLO PERSONAL AUTORIZADO *** $
 
 ! CREACION Y NOMBRAMIENTO DE VLANS
-VLAN 10
+VLAN 510
 name Administracion
-VLAN 20
+VLAN 520
 name Logistica
-VLAN 30
+VLAN 530
 name Finanzas
-VLAN 40
+VLAN 540
 name Marketing
-VLAN 50
+VLAN 550
 name Ventas
-VLAN 60
+VLAN 560
 name Servidores
-VLAN 70
+VLAN 570
 name WifiEjecutivo
-VLAN 80
+VLAN 580
 name WifiCliente
 VLAN 99
 name Management&Native
@@ -3461,11 +3461,11 @@ exit
 ! ASIGNACION DE VLAN A PCS
 interface range f0/1-12
 switchport mode access
-switchport access vlan 60
+switchport access VLAN 560
 !
 interface range f0/13-24
 switchport mode access
-switchport access vlan 60
+switchport access VLAN 560
 exit
 
 ! ASIGNACION DE ENLACE TRUNCAL CON LOS MLS
