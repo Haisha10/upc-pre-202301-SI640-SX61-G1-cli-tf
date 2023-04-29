@@ -2924,7 +2924,7 @@ ip address 172.21.80.1 255.255.255.192
 interface VLAN520
 ip address 172.21.80.65 255.255.255.224
 !
-interface VLAN 530
+interface VLAN530
 ip address 172.21.80.145 255.255.255.240
 !
 interface VLAN540
