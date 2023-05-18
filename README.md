@@ -2,6 +2,76 @@
 
 Trabajo Final de Redes y Comunicaciones de Datos
 
+## ISP
+
+### ROUTER (RTISP)
+
+```kotlin
+! CONFIGURACION SEGURIDAD BASICA
+enable
+configure terminal
+hostname RTISP
+enable secret ISP#20
+line console 0
+password ISP>20
+login
+exit
+line vty 0 15
+password ISP>20
+login
+exit
+banner motd $ *** SOLO PERSONAL AUTORIZADO *** $
+
+! ASIGNAR IP ROUTER - MLSWISP1
+interface GigabitEthernet0/0/1
+ ip address 200.0.0.1 255.255.255.0
+!
+
+! ASIGNAR IP DEL ROUTER ISP A LA SEDE LIMA
+interface Serial0/1/0
+ ip address 100.50.50.1 255.255.255.252
+ no shutdown
+!
+
+! GRABAR CONFIGURACION
+write
+write memory
+copy running-config startup-config
+```
+
+### Multilayer Switch (MLSWISP1)
+
+```kotlin
+! CONFIGURACION SEGURIDAD BASICA
+enable
+configure terminal
+hostname MLSWISP1
+enable secret ISP#20
+line console 0
+password ISP>20
+login
+exit
+line vty 0 15
+password ISP>20
+login
+exit
+banner motd $ *** SOLO PERSONAL AUTORIZADO *** $
+
+interface Vlan1
+ ip address 200.0.0.2 255.255.255.0
+ no shutdown
+!
+
+interface range g1/0/11-12
+ switchport access vlan 1
+!
+
+! GRABAR CONFIGURACION
+write
+write memory
+copy running-config startup-config
+```
+
 ## SEDE LIMA
 
 ### ROUTER (RTLIM1)
