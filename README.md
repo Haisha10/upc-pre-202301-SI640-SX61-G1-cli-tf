@@ -123,6 +123,26 @@ interface Serial0/3/1
  clock rate 2000000
 end
 
+! CONFIGURAR OSPF
+configure terminal
+router ospf 10
+router-id 1.1.1.1
+network 172.21.17.136 0.0.0.7 area 0
+network 172.21.17.144 0.0.0.7 area 0
+network 172.22.254.4 0.0.0.3 area 0
+end
+
+! CONFIGURAR PPP-PAP
+configure terminal
+interface s0/1/1
+encapsulation ppp
+exit
+username RTPIU1 secret Piu#20
+interface s0/1/1
+ppp authentication pap
+ppp pap sent-username RTLIM1 password Lim#20
+end 
+
 ! GRABAR CONFIGURACION
 write
 write memory
@@ -251,6 +271,23 @@ network 172.21.17.64 255.255.255.224
 default-router 172.21.17.65
 end
 
+! CONFIGURAR OSPF
+configure terminal
+router ospf 10
+router-id 1.1.1.2
+network 172.21.16.0 0.0.0.127 area 0
+network 172.21.16.128 0.0.0.63 area 0
+network 172.21.16.192 0.0.0.63 area 0
+network 172.21.17.0 0.0.0.31 area 0
+network 172.21.17.32 0.0.0.31 area 0
+network 172.21.17.64 0.0.0.31 area 0
+network 172.21.17.96 0.0.0.31 area 0
+network 172.21.17.128 0.0.0.7 area 0
+network 172.21.99.0 0.0.0.255 area 0
+network 172.21.17.136 0.0.0.7 area 0
+network 172.21.17.152 0.0.0.7 area 0
+end
+
 ! GRABAR CONFIGURACION
 write
 write memory
@@ -377,6 +414,23 @@ default-router 172.21.17.98
 ip dhcp pool POOL-VLAN180
 network 172.21.17.64 255.255.255.224
 default-router 172.21.17.66
+end
+
+! CONFIGURAR OSPF
+configure terminal
+router ospf 10
+router-id 1.1.1.3
+network 172.21.16.0 0.0.0.127 area 0
+network 172.21.16.128 0.0.0.63 area 0
+network 172.21.16.192 0.0.0.63 area 0
+network 172.21.17.0 0.0.0.31 area 0
+network 172.21.17.32 0.0.0.31 area 0
+network 172.21.17.64 0.0.0.31 area 0
+network 172.21.17.96 0.0.0.31 area 0
+network 172.21.17.128 0.0.0.7 area 0
+network 172.21.99.0 0.0.0.255 area 0
+network 172.21.17.144 0.0.0.7 area 0
+network 172.21.17.152 0.0.0.7 area 0
 end
 
 ! GRABAR CONFIGURACION
