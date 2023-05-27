@@ -94,11 +94,13 @@ banner motd $ *** SOLO PERSONAL AUTORIZADO *** $
 
 ! ASIGNAR IP ROUTER - MLSLIM1
 interface g0/1
-ip address 172.21.17.138 255.255.255.248
+ip address 172.21.17.137 255.255.255.252
+ip ospf 100 area 0
 
 ! ASIGNAR IP ROUTER - MLSLIM2
 interface g0/2
-ip address 172.21.17.146 255.255.255.248
+ip address 172.21.17.141 255.255.255.252
+ip ospf 100 area 0
 
 
 ! ASIGNAR IP A ROUTERS DE OTRAS SEDES E ISP
@@ -125,11 +127,14 @@ end
 
 ! CONFIGURAR OSPF
 configure terminal
-router ospf 10
+router ospf 100
 router-id 1.1.1.1
-network 172.21.17.136 0.0.0.7 area 0
-network 172.21.17.144 0.0.0.7 area 0
+network 172.21.17.136 0.0.0.3 area 0
+network 172.21.17.140 0.0.0.3 area 0
 network 172.22.254.4 0.0.0.3 area 0
+network 172.22.254.8 0.0.0.3 area 0
+network 172.22.254.12 0.0.0.3 area 0
+network 172.22.254.16 0.0.0.3 area 0
 end
 
 ! CONFIGURAR PPP-PAP
@@ -139,6 +144,30 @@ encapsulation ppp
 exit
 username RTPIU1 secret Piu#20
 interface s0/1/1
+ppp authentication pap
+ppp pap sent-username RTLIM1 password Lim#20
+!
+interface s0/3/1
+encapsulation ppp
+exit
+username RTARE1 secret Are#20
+interface s0/3/1
+ppp authentication pap
+ppp pap sent-username RTLIM1 password Lim#20
+!
+interface s0/2/1
+encapsulation ppp
+exit
+username RTCUS1 secret Cus#20
+interface s0/2/1
+ppp authentication pap
+ppp pap sent-username RTLIM1 password Lim#20
+!
+interface s0/2/0
+encapsulation ppp
+exit
+username RTCAJ1 secret Caj#20
+interface s0/2/0
 ppp authentication pap
 ppp pap sent-username RTLIM1 password Lim#20
 end 
@@ -196,11 +225,19 @@ interface range g1/0/11-17
 switchport trunk native vlan 99
 switchport mode trunk
 switchport nonegotiate
+ip ospf 100 area 0
 
 ! ASIGNAR IP MLS - ROUTER
 interface g1/0/1
 no switchport
-ip address 172.21.17.139 255.255.255.248
+ip address 172.21.17.138 255.255.255.252
+ip ospf 100 area 0
+
+! ASIGNAR IP MLS1 - MLS2
+interface g1/0/2
+no switchport
+ip address 172.21.17.145 255.255.255.252
+ip ospf 100 area 0
 
 ! DESHABILITAR VLAN1
 interface Vlan1
@@ -273,7 +310,7 @@ end
 
 ! CONFIGURAR OSPF
 configure terminal
-router ospf 10
+router ospf 100
 router-id 1.1.1.2
 network 172.21.16.0 0.0.0.127 area 0
 network 172.21.16.128 0.0.0.63 area 0
@@ -284,8 +321,8 @@ network 172.21.17.64 0.0.0.31 area 0
 network 172.21.17.96 0.0.0.31 area 0
 network 172.21.17.128 0.0.0.7 area 0
 network 172.21.99.0 0.0.0.255 area 0
-network 172.21.17.136 0.0.0.7 area 0
-network 172.21.17.152 0.0.0.7 area 0
+network 172.21.17.136 0.0.0.3 area 0
+network 172.21.17.144 0.0.0.3 area 0
 end
 
 ! GRABAR CONFIGURACION
@@ -345,7 +382,14 @@ switchport nonegotiate
 ! ASIGNAR IP MLS - ROUTER
 interface g1/0/1
 no switchport
-ip address 172.21.17.149 255.255.255.248
+ip address 172.21.17.142 255.255.255.252
+ip ospf 100 area 0
+
+! ASIGNAR IP MLS2 - MLS1
+interface g1/0/2
+no switchport
+ip address 172.21.17.146 255.255.255.252
+ip ospf 100 area 0
 
 ! DESHABILITAR VLAN1
 interface Vlan1
@@ -418,7 +462,7 @@ end
 
 ! CONFIGURAR OSPF
 configure terminal
-router ospf 10
+router ospf 100
 router-id 1.1.1.3
 network 172.21.16.0 0.0.0.127 area 0
 network 172.21.16.128 0.0.0.63 area 0
@@ -429,8 +473,8 @@ network 172.21.17.64 0.0.0.31 area 0
 network 172.21.17.96 0.0.0.31 area 0
 network 172.21.17.128 0.0.0.7 area 0
 network 172.21.99.0 0.0.0.255 area 0
-network 172.21.17.144 0.0.0.7 area 0
-network 172.21.17.152 0.0.0.7 area 0
+network 172.21.17.140 0.0.0.3 area 0
+network 172.21.17.144 0.0.0.3 area 0
 end
 
 ! GRABAR CONFIGURACION
@@ -965,12 +1009,33 @@ banner motd $ *** SOLO PERSONAL AUTORIZADO *** $
 
 ! ASIGNAR IP ROUTER - MLSPIU1
 interface g0/0/1
-ip address 172.21.33.90 255.255.255.248
+ip address 172.21.33.89 255.255.255.252
+ip ospf 100 area 0
 
 ! ASIGNAR IP A ROUTERS DE OTRAS SEDES E ISP
 interface Serial0/1/1
  ip address 172.22.254.6 255.255.255.252
  clock rate 2000000
+ ip ospf 100 area 0
+end
+
+! CONFIGURAR OSPF
+configure terminal
+router ospf 100
+router-id 2.2.2.2
+network 172.21.33.88 0.0.0.3 area 0
+network 172.22.254.4 0.0.0.3 area 0
+end
+
+! CONFIGURAR PPP-PAP
+configure terminal
+interface s0/1/1
+encapsulation ppp
+exit
+username RTLIM1 secret Lim#20
+interface s0/1/1
+ppp authentication pap
+ppp pap sent-username RTPIU1 password Piu#20
 end
 
 ! GRABAR CONFIGURACION
@@ -1030,7 +1095,7 @@ switchport nonegotiate
 ! ASIGNAR IP MLS - ROUTER
 interface g1/0/1
 no switchport
-ip address 172.21.33.91 255.255.255.248
+ip address 172.21.33.90 255.255.255.252
 
 ! DESHABILITAR VLAN1
 interface Vlan1
@@ -1099,6 +1164,22 @@ default-router 172.21.33.65
 ip dhcp pool POOL-VLAN280
 network 172.21.33.32 255.255.255.224
 default-router 172.21.33.33
+end
+
+! CONFIGURAR OSPF
+configure terminal
+router ospf 100
+router-id 2.2.2.3
+network 172.21.32.0 0.0.0.127 area 0
+network 172.21.32.128 0.0.0.63 area 0
+network 172.21.32.192 0.0.0.31 area 0
+network 172.21.32.224 0.0.0.31 area 0
+network 172.21.33.0 0.0.0.31 area 0
+network 172.21.33.32 0.0.0.31 area 0
+network 172.21.33.64 0.0.0.15 area 0
+network 172.21.33.80 0.0.0.7 area 0
+network 172.21.99.0 0.0.0.255 area 0
+network 172.21.33.88 0.0.0.3 area 0
 end
 
 ! GRABAR CONFIGURACION
@@ -1633,12 +1714,31 @@ banner motd $ *** SOLO PERSONAL AUTORIZADO *** $
 
 ! ASIGNAR IP ROUTER - MLSARE1
 interface g0/0/1
-ip address 172.21.48.210 255.255.255.248
+ip address 172.21.48.209 255.255.255.252
 
 ! ASIGNAR IP A ROUTERS DE OTRAS SEDES E ISP
 interface Serial0/2/1
  ip address 172.22.254.10 255.255.255.252
  clock rate 2000000
+end
+
+! CONFIGURAR OSPF
+configure terminal
+router ospf 100
+router-id 3.3.3.3
+network 172.21.48.208 0.0.0.3 area 0
+network 172.22.254.8 0.0.0.3 area 0
+end
+
+! CONFIGURAR PPP-PAP
+configure terminal
+interface s0/2/1
+encapsulation ppp
+exit
+username RTLIM1 secret Lim#20
+interface s0/2/1
+ppp authentication pap
+ppp pap sent-username RTARE1 password Are#20
 end
 
 ! GRABAR CONFIGURACION
@@ -1698,7 +1798,7 @@ switchport nonegotiate
 ! ASIGNAR IP MLS - ROUTER
 interface g1/0/1
 no switchport
-ip address 172.21.48.211 255.255.255.248
+ip address 172.21.48.210 255.255.255.252
 
 ! DESHABILITAR VLAN1
 interface Vlan1
@@ -1767,6 +1867,22 @@ default-router 172.21.48.193
 ip dhcp pool POOL-VLAN380
 network 172.21.48.176 255.255.255.240
 default-router 172.21.48.177
+end
+
+! CONFIGURAR OSPF
+configure terminal
+router ospf 100
+router-id 3.3.3.4
+network 172.21.48.0 0.0.0.63 area 0
+network 172.21.48.64 0.0.0.31 area 0
+network 172.21.48.96 0.0.0.31 area 0
+network 172.21.48.128 0.0.0.31 area 0
+network 172.21.48.160 0.0.0.15 area 0
+network 172.21.48.176 0.0.0.15 area 0
+network 172.21.48.192 0.0.0.07 area 0
+network 172.21.48.200 0.0.0.07 area 0
+network 172.21.99.0 0.0.0.255 area 0
+network 172.21.48.208 0.0.0.3 area 0
 end
 
 ! GRABAR CONFIGURACION
@@ -2301,12 +2417,31 @@ banner motd $ *** SOLO PERSONAL AUTORIZADO *** $
 
 ! ASIGNAR IP ROUTER - MLSCUS1
 interface g0/0/1
-ip address 172.21.64.212 255.255.255.248
+ip address 172.21.64.201 255.255.255.252
 
 ! ASIGNAR IP A ROUTERS DE OTRAS SEDES E ISP
 interface Serial0/1/0
  ip address 172.22.254.14 255.255.255.252
  clock rate 2000000
+end
+
+! CONFIGURAR OSPF
+configure terminal
+router ospf 100
+router-id 4.4.4.4
+network 172.21.64.200 0.0.0.3 area 0
+network 172.22.254.12 0.0.0.3 area 0
+end
+
+! CONFIGURAR PPP-PAP
+configure terminal
+interface s0/1/0
+encapsulation ppp
+exit
+username RTLIM1 secret Lim#20
+interface s0/1/0
+ppp authentication pap
+ppp pap sent-username RTCUS1 password Cus#20
 end
 
 ! GRABAR CONFIGURACION
@@ -2366,7 +2501,7 @@ switchport nonegotiate
 ! ASIGNAR IP MLS - ROUTER
 interface g1/0/1
 no switchport
-ip address 172.21.64.213 255.255.255.248
+ip address 172.21.64.202 255.255.255.252
 
 ! DESHABILITAR VLAN1
 interface Vlan1
@@ -2435,6 +2570,22 @@ default-router 172.21.64.177
 ip dhcp pool POOL-VLAN480
 network 172.21.64.160 255.255.255.240
 default-router 172.21.64.161
+end
+
+! CONFIGURAR OSPF
+configure terminal
+router ospf 100
+router-id 4.4.4.5
+network 172.21.64.0 0.0.0.63 area 0
+network 172.21.64.64 0.0.0.31 area 0
+network 172.21.64.96 0.0.0.31 area 0
+network 172.21.64.128 0.0.0.15 area 0
+network 172.21.64.144 0.0.0.15 area 0
+network 172.21.64.160 0.0.0.15 area 0
+network 172.21.64.176 0.0.0.15 area 0
+network 172.21.64.192 0.0.0.7 area 0
+network 172.21.99.0 0.0.0.255 area 0
+network 172.21.64.200 0.0.0.3 area 0
 end
 
 ! GRABAR CONFIGURACION
@@ -2969,12 +3120,31 @@ banner motd $ *** SOLO PERSONAL AUTORIZADO *** $
 
 ! ASIGNAR IP ROUTER - MLSCAJ1
 interface g0/0/1
-ip address 172.21.80.194 255.255.255.248
+ip address 172.21.80.193 255.255.255.252
 
 ! ASIGNAR IP A ROUTERS DE OTRAS SEDES E ISP
 interface Serial0/2/0
  ip address 172.22.254.18 255.255.255.252
  clock rate 2000000
+end
+
+! CONFIGURAR OSPF
+configure terminal
+router ospf 100
+router-id 5.5.5.5
+network 172.21.80.192 0.0.0.3 area 0
+network 172.22.254.16 0.0.0.3 area 0
+end
+
+! CONFIGURAR PPP-PAP
+configure terminal
+interface s0/2/0
+encapsulation ppp
+exit
+username RTLIM1 secret Lim#20
+interface s0/2/0
+ppp authentication pap
+ppp pap sent-username RTCAJ1 password Caj#20
 end
 
 ! GRABAR CONFIGURACION
@@ -3034,7 +3204,7 @@ switchport nonegotiate
 ! ASIGNAR IP MLS - ROUTER
 interface g1/0/1
 no switchport
-ip address 172.21.80.195 255.255.255.248
+ip address 172.21.80.194 255.255.255.252
 
 ! DESHABILITAR VLAN1
 interface Vlan1
@@ -3103,6 +3273,22 @@ default-router 172.21.64.177
 ip dhcp pool POOL-VLAN580
 network 172.21.80.160 255.255.255.240
 default-router 172.21.64.161
+end
+
+! CONFIGURAR OSPF
+configure terminal
+router ospf 100
+router-id 5.5.5.6
+network 172.21.80.0 0.0.0.63 area 0
+network 172.21.80.64 0.0.0.31 area 0
+network 172.21.80.96 0.0.0.31 area 0
+network 172.21.80.128 0.0.0.15 area 0
+network 172.21.80.144 0.0.0.15 area 0
+network 172.21.80.160 0.0.0.15 area 0
+network 172.21.80.176 0.0.0.7 area 0
+network 172.21.80.184 0.0.0.7 area 0
+network 172.21.99.0 0.0.0.255 area 0
+network 172.21.80.192 0.0.0.3 area 0
 end
 
 ! GRABAR CONFIGURACION
