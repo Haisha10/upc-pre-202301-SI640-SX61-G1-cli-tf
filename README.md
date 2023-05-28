@@ -299,34 +299,42 @@ exit
 ip dhcp pool POOL-VLAN110
 network 172.21.16.0 255.255.255.128
 default-router 172.21.16.1
+dns-server 200.0.0.22
 !
 ip dhcp pool POOL-VLAN120
 network 172.21.16.128 255.255.255.192
 default-router 172.21.16.129
+dns-server 200.0.0.22
 !
 ip dhcp pool POOL-VLAN130
 network 172.21.17.32 255.255.255.224
 default-router 172.21.17.33
+dns-server 200.0.0.22
 !
 ip dhcp pool POOL-VLAN140
 network 172.21.16.192 255.255.255.192
 default-router 172.21.16.193
+dns-server 200.0.0.22
 !
 ip dhcp pool POOL-VLAN150
 network 172.21.17.0 255.255.255.224
 default-router 172.21.17.1
+dns-server 200.0.0.22
 !
 ip dhcp pool POOL-VLAN160
 network 172.21.17.128 255.255.255.248
 default-router 172.21.17.129
+dns-server 200.0.0.22
 !
 ip dhcp pool POOL-VLAN170
 network 172.21.17.96 255.255.255.224
 default-router 172.21.17.97
+dns-server 200.0.0.22
 !
 ip dhcp pool POOL-VLAN180
 network 172.21.17.64 255.255.255.224
 default-router 172.21.17.65
+dns-server 200.0.0.22
 end
 
 ! CONFIGURAR OSPF
@@ -451,34 +459,42 @@ exit
 ip dhcp pool POOL-VLAN110
 network 172.21.16.0 255.255.255.128
 default-router 172.21.16.2
+dns-server 200.0.0.22
 !
 ip dhcp pool POOL-VLAN120
 network 172.21.16.128 255.255.255.192
 default-router 172.21.16.130
+dns-server 200.0.0.22
 !
 ip dhcp pool POOL-VLAN130
 network 172.21.17.32 255.255.255.224
 default-router 172.21.17.34
+dns-server 200.0.0.22
 !
 ip dhcp pool POOL-VLAN140
 network 172.21.16.192 255.255.255.192
 default-router 172.21.16.194
+dns-server 200.0.0.22
 !
 ip dhcp pool POOL-VLAN150
 network 172.21.17.0 255.255.255.224
 default-router 172.21.17.2
+dns-server 200.0.0.22
 !
 ip dhcp pool POOL-VLAN160
 network 172.21.17.128 255.255.255.248
 default-router 172.21.17.130
+dns-server 200.0.0.22
 !
 ip dhcp pool POOL-VLAN170
 network 172.21.17.96 255.255.255.224
 default-router 172.21.17.98
+dns-server 200.0.0.22
 !
 ip dhcp pool POOL-VLAN180
 network 172.21.17.64 255.255.255.224
 default-router 172.21.17.66
+dns-server 200.0.0.22
 end
 
 ! CONFIGURAR OSPF
@@ -1157,34 +1173,42 @@ exit
 ip dhcp pool POOL-VLAN210
 network 172.21.32.0 255.255.255.128
 default-router 172.21.32.1
+dns-server 200.0.0.22
 !
 ip dhcp pool POOL-VLAN220
 network 172.21.32.128 255.255.255.192
 default-router 172.21.32.129
+dns-server 200.0.0.22
 !
 ip dhcp pool POOL-VLAN230
 network 172.21.33.0  255.255.255.224
 default-router 172.21.33.1
+dns-server 200.0.0.22
 !
 ip dhcp pool POOL-VLAN240
 network 172.21.32.192 255.255.255.224
 default-router 172.21.32.193
+dns-server 200.0.0.22
 !
 ip dhcp pool POOL-VLAN250
 network 172.21.32.224 255.255.255.224
 default-router 172.21.32.225
+dns-server 200.0.0.22
 !
 ip dhcp pool POOL-VLAN260
 network 172.21.33.80 255.255.255.248
 default-router 172.21.33.81
+dns-server 200.0.0.22
 !
 ip dhcp pool POOL-VLAN270
 network 172.21.33.64 255.255.255.240
 default-router 172.21.33.65
+dns-server 200.0.0.22
 !
 ip dhcp pool POOL-VLAN280
 network 172.21.33.32 255.255.255.224
 default-router 172.21.33.33
+dns-server 200.0.0.22
 end
 
 ! CONFIGURAR OSPF
@@ -1860,34 +1884,42 @@ exit
 ip dhcp pool POOL-VLAN310
 network 172.21.48.0 255.255.255.192
 default-router 172.21.48.1
+dns-server 200.0.0.22
 !
 ip dhcp pool POOL-VLAN320
 network 172.21.48.64 255.255.255.224
 default-router 172.21.48.65
+dns-server 200.0.0.22
 !
 ip dhcp pool POOL-VLAN330
 network 172.21.48.160 255.255.255.240
 default-router 172.21.48.161
+dns-server 200.0.0.22
 !
 ip dhcp pool POOL-VLAN340
 network 172.21.48.96 255.255.255.224
 default-router 172.21.48.97
+dns-server 200.0.0.22
 !
 ip dhcp pool POOL-VLAN350
 network 172.21.48.128 255.255.255.224
 default-router 172.21.48.129
+dns-server 200.0.0.22
 !
 ip dhcp pool POOL-VLAN360
 network 172.21.48.200 255.255.255.248
 default-router 172.21.48.201
+dns-server 200.0.0.22
 !
 ip dhcp pool POOL-VLAN370
 network 172.21.48.192 255.255.255.248
 default-router 172.21.48.193
+dns-server 200.0.0.22
 !
 ip dhcp pool POOL-VLAN380
 network 172.21.48.176 255.255.255.240
 default-router 172.21.48.177
+dns-server 200.0.0.22
 end
 
 ! CONFIGURAR OSPF
@@ -2563,34 +2595,42 @@ exit
 ip dhcp pool POOL-VLAN410
 network 172.21.64.0 255.255.255.192
 default-router 172.21.64.1
+dns-server 200.0.0.22
 !
 ip dhcp pool POOL-VLAN420
 network 172.21.64.64 255.255.255.224
 default-router 172.21.64.65
+dns-server 200.0.0.22
 !
 ip dhcp pool POOL-VLAN430
 network 172.21.64.144 255.255.255.240
 default-router 172.21.64.145
+dns-server 200.0.0.22
 !
 ip dhcp pool POOL-VLAN440
 network 172.21.64.96 255.255.255.224
 default-router 172.21.64.97
+dns-server 200.0.0.22
 !
 ip dhcp pool POOL-VLAN450
 network 172.21.64.128 255.255.255.240
 default-router 172.21.64.129
+dns-server 200.0.0.22
 !
 ip dhcp pool POOL-VLAN460
 network 172.21.64.192 255.255.255.248
 default-router 172.21.64.193
+dns-server 200.0.0.22
 !
 ip dhcp pool POOL-VLAN470
 network 172.21.64.176 255.255.255.240
 default-router 172.21.64.177
+dns-server 200.0.0.22
 !
 ip dhcp pool POOL-VLAN480
 network 172.21.64.160 255.255.255.240
 default-router 172.21.64.161
+dns-server 200.0.0.22
 end
 
 ! CONFIGURAR OSPF
@@ -3266,34 +3306,42 @@ exit
 ip dhcp pool POOL-VLAN510
 network 172.21.80.0 255.255.255.192
 default-router 172.21.80.1
+dns-server 200.0.0.22
 !
 ip dhcp pool POOL-VLAN520
 network 172.21.80.64 255.255.255.224
 default-router 172.21.80.65
+dns-server 200.0.0.22
 !
 ip dhcp pool POOL-VLAN530
 network 172.21.80.144 255.255.255.240
 default-router 172.21.80.145
+dns-server 200.0.0.22
 !
 ip dhcp pool POOL-VLAN540
 network 172.21.80.96 255.255.255.224
 default-router 172.21.80.97
+dns-server 200.0.0.22
 !
 ip dhcp pool POOL-VLAN550
 network 172.21.80.128 255.255.255.240
 default-router 172.21.80.129
+dns-server 200.0.0.22
 !
 ip dhcp pool POOL-VLAN560
 network 172.21.80.184 255.255.255.248
 default-router 172.21.80.185
+dns-server 200.0.0.22
 !
 ip dhcp pool POOL-VLAN570
 network 172.21.80.176 255.255.255.248
 default-router 172.21.64.177
+dns-server 200.0.0.22
 !
 ip dhcp pool POOL-VLAN580
 network 172.21.80.160 255.255.255.240
 default-router 172.21.64.161
+dns-server 200.0.0.22
 end
 
 ! CONFIGURAR OSPF
