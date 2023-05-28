@@ -33,13 +33,7 @@ interface Serial0/1/0
  no shutdown
 !
 
-! CONFIGURAR OSPF
-configure terminal
-router ospf 100
-router-id 6.6.6.6
-network 200.0.0.0 0.0.0.255 area 0
-network 100.50.50.0 0.0.0.3 area 0
-exit
+ip route 0.0.0.0 0.0.0.0 100.50.50.2
 
 username RTLIM1 secret Lim#20
 interface s0/1/0
@@ -150,7 +144,9 @@ network 172.22.254.4 0.0.0.3 area 0
 network 172.22.254.8 0.0.0.3 area 0
 network 172.22.254.12 0.0.0.3 area 0
 network 172.22.254.16 0.0.0.3 area 0
-network 100.50.50.0 0.0.0.3 area 0
+exit
+
+ip route 0.0.0.0 0.0.0.0 100.50.50.1
 end
 
 ! CONFIGURAR PPP-PAP
@@ -192,6 +188,7 @@ username RTISP secret ISP#20
 interface s0/1/0
 encapsulation ppp
 ppp authentication chap
+end
 
 ! GRABAR CONFIGURACION
 write
@@ -352,6 +349,9 @@ network 172.21.17.128 0.0.0.7 area 0
 network 172.21.99.0 0.0.0.255 area 0
 network 172.21.17.136 0.0.0.3 area 0
 network 172.21.17.144 0.0.0.3 area 0
+exit
+
+ip route 0.0.0.0 0.0.0.0 g1/0/1
 end
 
 ! GRABAR CONFIGURACION
@@ -512,6 +512,9 @@ network 172.21.17.128 0.0.0.7 area 0
 network 172.21.99.0 0.0.0.255 area 0
 network 172.21.17.140 0.0.0.3 area 0
 network 172.21.17.144 0.0.0.3 area 0
+exit
+
+ip route 0.0.0.0 0.0.0.0 g1/0/1
 end
 
 ! GRABAR CONFIGURACION
@@ -1062,6 +1065,9 @@ router ospf 100
 router-id 2.2.2.2
 network 172.21.33.88 0.0.0.3 area 0
 network 172.22.254.4 0.0.0.3 area 0
+exit
+
+ip route 0.0.0.0 0.0.0.0 172.22.254.5
 end
 
 ! CONFIGURAR PPP-PAP
@@ -1225,6 +1231,9 @@ network 172.21.33.64 0.0.0.15 area 0
 network 172.21.33.80 0.0.0.7 area 0
 network 172.21.99.0 0.0.0.255 area 0
 network 172.21.33.88 0.0.0.3 area 0
+exit
+
+ip route 0.0.0.0 0.0.0.0 g1/0/1
 end
 
 ! GRABAR CONFIGURACION
@@ -1773,6 +1782,9 @@ router ospf 100
 router-id 3.3.3.3
 network 172.21.48.208 0.0.0.3 area 0
 network 172.22.254.8 0.0.0.3 area 0
+exit
+
+ip route 0.0.0.0 0.0.0.0 172.22.254.9
 end
 
 ! CONFIGURAR PPP-PAP
@@ -1936,6 +1948,9 @@ network 172.21.48.192 0.0.0.07 area 0
 network 172.21.48.200 0.0.0.07 area 0
 network 172.21.99.0 0.0.0.255 area 0
 network 172.21.48.208 0.0.0.3 area 0
+exit
+
+ip route 0.0.0.0 0.0.0.0 g1/0/1
 end
 
 ! GRABAR CONFIGURACION
@@ -2484,6 +2499,9 @@ router ospf 100
 router-id 4.4.4.4
 network 172.21.64.200 0.0.0.3 area 0
 network 172.22.254.12 0.0.0.3 area 0
+exit
+
+ip route 0.0.0.0 0.0.0.0 172.22.254.13
 end
 
 ! CONFIGURAR PPP-PAP
@@ -2647,6 +2665,9 @@ network 172.21.64.176 0.0.0.15 area 0
 network 172.21.64.192 0.0.0.7 area 0
 network 172.21.99.0 0.0.0.255 area 0
 network 172.21.64.200 0.0.0.3 area 0
+exit
+
+ip route 0.0.0.0 0.0.0.0 g1/0/1
 end
 
 ! GRABAR CONFIGURACION
@@ -3195,6 +3216,9 @@ router ospf 100
 router-id 5.5.5.5
 network 172.21.80.192 0.0.0.3 area 0
 network 172.22.254.16 0.0.0.3 area 0
+exit
+
+ip route 0.0.0.0 0.0.0.0 172.22.254.13
 end
 
 ! CONFIGURAR PPP-PAP
@@ -3358,6 +3382,9 @@ network 172.21.80.176 0.0.0.7 area 0
 network 172.21.80.184 0.0.0.7 area 0
 network 172.21.99.0 0.0.0.255 area 0
 network 172.21.80.192 0.0.0.3 area 0
+exit
+
+ip route 0.0.0.0 0.0.0.0 g1/0/1
 end
 
 ! GRABAR CONFIGURACION
