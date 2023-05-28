@@ -33,6 +33,21 @@ interface Serial0/1/0
  no shutdown
 !
 
+! CONFIGURAR OSPF
+configure terminal
+router ospf 100
+router-id 6.6.6.6
+network 200.0.0.0 0.0.0.255 area 0
+network 100.50.50.0 0.0.0.3 area 0
+exit
+
+username RTLIM1 secret Lim#20
+interface s0/1/0
+encapsulation ppp
+ppp authentication chap
+end
+
+
 ! GRABAR CONFIGURACION
 write
 write memory
@@ -135,6 +150,7 @@ network 172.22.254.4 0.0.0.3 area 0
 network 172.22.254.8 0.0.0.3 area 0
 network 172.22.254.12 0.0.0.3 area 0
 network 172.22.254.16 0.0.0.3 area 0
+network 100.50.50.0 0.0.0.3 area 0
 end
 
 ! CONFIGURAR PPP-PAP
@@ -170,7 +186,12 @@ username RTCAJ1 secret Caj#20
 interface s0/2/0
 ppp authentication pap
 ppp pap sent-username RTLIM1 password Lim#20
-end 
+!
+exit
+username RTISP secret ISP#20
+interface s0/1/0
+encapsulation ppp
+ppp authentication chap
 
 ! GRABAR CONFIGURACION
 write
