@@ -144,6 +144,7 @@ network 172.22.254.4 0.0.0.3 area 0
 network 172.22.254.8 0.0.0.3 area 0
 network 172.22.254.12 0.0.0.3 area 0
 network 172.22.254.16 0.0.0.3 area 0
+default-information originate
 exit
 
 ip route 0.0.0.0 0.0.0.0 100.50.50.1
@@ -288,7 +289,7 @@ interface Vlan180
 ip address 172.21.17.65 255.255.255.224
 !
 interface Vlan99
-ip address 172.21.99.1 255.255.255.0
+ip address 172.21.99.1 255.255.255.240
 !
 exit
 
@@ -346,12 +347,9 @@ network 172.21.17.32 0.0.0.31 area 0
 network 172.21.17.64 0.0.0.31 area 0
 network 172.21.17.96 0.0.0.31 area 0
 network 172.21.17.128 0.0.0.7 area 0
-network 172.21.99.0 0.0.0.255 area 0
+network 172.21.99.0 0.0.0.15 area 0
 network 172.21.17.136 0.0.0.3 area 0
 network 172.21.17.144 0.0.0.3 area 0
-exit
-
-ip route 0.0.0.0 0.0.0.0 g1/0/1
 end
 
 ! GRABAR CONFIGURACION
@@ -451,7 +449,7 @@ interface Vlan180
 ip address 172.21.17.66 255.255.255.224
 !
 interface Vlan99
-ip address 172.21.99.2 255.255.255.0
+ip address 172.21.99.2 255.255.255.240
 !
 exit
 
@@ -509,12 +507,9 @@ network 172.21.17.32 0.0.0.31 area 0
 network 172.21.17.64 0.0.0.31 area 0
 network 172.21.17.96 0.0.0.31 area 0
 network 172.21.17.128 0.0.0.7 area 0
-network 172.21.99.0 0.0.0.255 area 0
+network 172.21.99.0 0.0.0.15 area 0
 network 172.21.17.140 0.0.0.3 area 0
 network 172.21.17.144 0.0.0.3 area 0
-exit
-
-ip route 0.0.0.0 0.0.0.0 g1/0/1
 end
 
 ! GRABAR CONFIGURACION
@@ -584,7 +579,7 @@ shutdown
 
 ! ASIGNAR IP EN VLAN 99
 interface Vlan99
-ip address 172.21.99.11 255.255.255.0
+ip address 172.21.99.3 255.255.255.240
 exit
 ip default-gateway 172.21.99.1
 end
@@ -656,7 +651,7 @@ shutdown
 
 ! ASIGNAR IP EN VLAN 99
 interface Vlan99
-ip address 172.21.99.12 255.255.255.0
+ip address 172.21.99.4 255.255.255.240
 exit
 ip default-gateway 172.21.99.1
 end
@@ -728,7 +723,7 @@ shutdown
 
 ! ASIGNAR IP EN VLAN 99
 interface Vlan99
-ip address 172.21.99.13 255.255.255.0
+ip address 172.21.99.5 255.255.255.240
 exit
 ip default-gateway 172.21.99.1
 end
@@ -800,7 +795,7 @@ shutdown
 
 ! ASIGNAR IP EN VLAN 99
 interface Vlan99
-ip address 172.21.99.14 255.255.255.0
+ip address 172.21.99.6 255.255.255.240
 exit
 ip default-gateway 172.21.99.1
 end
@@ -872,7 +867,7 @@ shutdown
 
 ! ASIGNAR IP EN VLAN 99
 interface Vlan99
-ip address 172.21.99.15 255.255.255.0
+ip address 172.21.99.7 255.255.255.240
 exit
 ip default-gateway 172.21.99.1
 end
@@ -944,7 +939,7 @@ shutdown
 
 ! ASIGNAR IP EN VLAN 99
 interface Vlan99
-ip address 172.21.99.16 255.255.255.0
+ip address 172.21.99.8 255.255.255.240
 exit
 ip default-gateway 172.21.99.1
 end
@@ -1016,7 +1011,7 @@ shutdown
 
 ! ASIGNAR IP EN VLAN 99
 interface Vlan99
-ip address 172.21.99.17 255.255.255.0
+ip address 172.21.99.9 255.255.255.240
 exit
 ip default-gateway 172.21.99.1
 end
@@ -1065,9 +1060,6 @@ router ospf 100
 router-id 2.2.2.2
 network 172.21.33.88 0.0.0.3 area 0
 network 172.22.254.4 0.0.0.3 area 0
-exit
-
-ip route 0.0.0.0 0.0.0.0 172.22.254.5
 end
 
 ! CONFIGURAR PPP-PAP
@@ -1171,7 +1163,7 @@ interface VLAN280
 ip address 172.21.33.33 255.255.255.224
 !
 interface Vlan99
-ip address 172.21.99.3 255.255.255.0
+ip address 172.21.99.17 255.255.255.240
 !
 exit
 
@@ -1229,11 +1221,8 @@ network 172.21.33.0 0.0.0.31 area 0
 network 172.21.33.32 0.0.0.31 area 0
 network 172.21.33.64 0.0.0.15 area 0
 network 172.21.33.80 0.0.0.7 area 0
-network 172.21.99.0 0.0.0.255 area 0
+network 172.21.99.16 0.0.0.15 area 0
 network 172.21.33.88 0.0.0.3 area 0
-exit
-
-ip route 0.0.0.0 0.0.0.0 g1/0/1
 end
 
 ! GRABAR CONFIGURACION
@@ -1303,9 +1292,9 @@ shutdown
 
 ! ASIGNAR IP EN VLAN 99
 interface Vlan99
-ip address 172.21.99.21 255.255.255.0
+ip address 172.21.99.18 255.255.255.240
 exit
-ip default-gateway 172.21.99.3
+ip default-gateway 172.21.99.17
 end
 
 ! GRABAR CONFIGURACION
@@ -1375,9 +1364,9 @@ shutdown
 
 ! ASIGNAR IP EN VLAN 99
 interface Vlan99
-ip address 172.21.99.22 255.255.255.0
+ip address 172.21.99.19 255.255.255.240
 exit
-ip default-gateway 172.21.99.3
+ip default-gateway 172.21.99.17
 end
 
 ! GRABAR CONFIGURACION
@@ -1447,9 +1436,9 @@ shutdown
 
 ! ASIGNAR IP EN VLAN 99
 interface Vlan99
-ip address 172.21.99.23 255.255.255.0
+ip address 172.21.99.20 255.255.255.240
 exit
-ip default-gateway 172.21.99.3
+ip default-gateway 172.21.99.17
 end
 
 ! GRABAR CONFIGURACION
@@ -1519,9 +1508,9 @@ shutdown
 
 ! ASIGNAR IP EN VLAN 99
 interface Vlan99
-ip address 172.21.99.24 255.255.255.0
+ip address 172.21.99.21 255.255.255.240
 exit
-ip default-gateway 172.21.99.3
+ip default-gateway 172.21.99.17
 end
 
 ! GRABAR CONFIGURACION
@@ -1591,9 +1580,9 @@ shutdown
 
 ! ASIGNAR IP EN VLAN 99
 interface Vlan99
-ip address 172.21.99.25 255.255.255.0
+ip address 172.21.99.22 255.255.255.240
 exit
-ip default-gateway 172.21.99.3
+ip default-gateway 172.21.99.17
 end
 
 ! GRABAR CONFIGURACION
@@ -1663,9 +1652,9 @@ shutdown
 
 ! ASIGNAR IP EN VLAN 99
 interface Vlan99
-ip address 172.21.99.26 255.255.255.0
+ip address 172.21.99.23 255.255.255.240
 exit
-ip default-gateway 172.21.99.3
+ip default-gateway 172.21.99.17
 end
 
 ! GRABAR CONFIGURACION
@@ -1735,9 +1724,9 @@ shutdown
 
 ! ASIGNAR IP EN VLAN 99
 interface Vlan99
-ip address 172.21.99.27 255.255.255.0
+ip address 172.21.99.24 255.255.255.240
 exit
-ip default-gateway 172.21.99.3
+ip default-gateway 172.21.99.17
 end
 
 ! GRABAR CONFIGURACION
@@ -1782,9 +1771,6 @@ router ospf 100
 router-id 3.3.3.3
 network 172.21.48.208 0.0.0.3 area 0
 network 172.22.254.8 0.0.0.3 area 0
-exit
-
-ip route 0.0.0.0 0.0.0.0 172.22.254.9
 end
 
 ! CONFIGURAR PPP-PAP
@@ -1888,7 +1874,7 @@ interface VLAN380
 ip address 172.21.48.177 255.255.255.240
 !
 interface Vlan99
-ip address 172.21.99.4 255.255.255.0
+ip address 172.21.99.33 255.255.255.240
 !
 exit
 
@@ -1946,11 +1932,8 @@ network 172.21.48.160 0.0.0.15 area 0
 network 172.21.48.176 0.0.0.15 area 0
 network 172.21.48.192 0.0.0.07 area 0
 network 172.21.48.200 0.0.0.07 area 0
-network 172.21.99.0 0.0.0.255 area 0
+network 172.21.99.32 0.0.0.15 area 0
 network 172.21.48.208 0.0.0.3 area 0
-exit
-
-ip route 0.0.0.0 0.0.0.0 g1/0/1
 end
 
 ! GRABAR CONFIGURACION
@@ -2020,9 +2003,9 @@ shutdown
 
 ! ASIGNAR IP EN VLAN 99
 interface Vlan99
-ip address 172.21.99.31 255.255.255.0
+ip address 172.21.99.34 255.255.255.240
 exit
-ip default-gateway 172.21.99.4
+ip default-gateway 172.21.99.33
 end
 
 ! GRABAR CONFIGURACION
@@ -2092,9 +2075,9 @@ shutdown
 
 ! ASIGNAR IP EN VLAN 99
 interface Vlan99
-ip address 172.21.99.32 255.255.255.0
+ip address 172.21.99.35 255.255.255.240
 exit
-ip default-gateway 172.21.99.4
+ip default-gateway 172.21.99.33
 end
 
 ! GRABAR CONFIGURACION
@@ -2164,9 +2147,9 @@ shutdown
 
 ! ASIGNAR IP EN VLAN 99
 interface Vlan99
-ip address 172.21.99.33 255.255.255.0
+ip address 172.21.99.36 255.255.255.240
 exit
-ip default-gateway 172.21.99.4
+ip default-gateway 172.21.99.33
 end
 
 ! GRABAR CONFIGURACION
@@ -2236,9 +2219,9 @@ shutdown
 
 ! ASIGNAR IP EN VLAN 99
 interface Vlan99
-ip address 172.21.99.34 255.255.255.0
+ip address 172.21.99.37 255.255.255.240
 exit
-ip default-gateway 172.21.99.4
+ip default-gateway 172.21.99.33
 end
 
 ! GRABAR CONFIGURACION
@@ -2308,9 +2291,9 @@ shutdown
 
 ! ASIGNAR IP EN VLAN 99
 interface Vlan99
-ip address 172.21.99.35 255.255.255.0
+ip address 172.21.99.38 255.255.255.240
 exit
-ip default-gateway 172.21.99.4
+ip default-gateway 172.21.99.33
 end
 
 ! GRABAR CONFIGURACION
@@ -2380,9 +2363,9 @@ shutdown
 
 ! ASIGNAR IP EN VLAN 99
 interface Vlan99
-ip address 172.21.99.36 255.255.255.0
+ip address 172.21.99.39 255.255.255.240
 exit
-ip default-gateway 172.21.99.4
+ip default-gateway 172.21.99.33
 end
 
 ! GRABAR CONFIGURACION
@@ -2452,9 +2435,9 @@ shutdown
 
 ! ASIGNAR IP EN VLAN 99
 interface Vlan99
-ip address 172.21.99.37 255.255.255.0
+ip address 172.21.99.40 255.255.255.240
 exit
-ip default-gateway 172.21.99.4
+ip default-gateway 172.21.99.33
 end
 
 ! GRABAR CONFIGURACION
@@ -2499,9 +2482,6 @@ router ospf 100
 router-id 4.4.4.4
 network 172.21.64.200 0.0.0.3 area 0
 network 172.22.254.12 0.0.0.3 area 0
-exit
-
-ip route 0.0.0.0 0.0.0.0 172.22.254.13
 end
 
 ! CONFIGURAR PPP-PAP
@@ -2605,7 +2585,7 @@ interface VLAN480
 ip address 172.21.64.161 255.255.255.240
 !
 interface Vlan99
-ip address 172.21.99.5 255.255.255.0
+ip address 172.21.99.49 255.255.255.240
 !
 exit
 
@@ -2663,11 +2643,8 @@ network 172.21.64.144 0.0.0.15 area 0
 network 172.21.64.160 0.0.0.15 area 0
 network 172.21.64.176 0.0.0.15 area 0
 network 172.21.64.192 0.0.0.7 area 0
-network 172.21.99.0 0.0.0.255 area 0
+network 172.21.99.48 0.0.0.15 area 0
 network 172.21.64.200 0.0.0.3 area 0
-exit
-
-ip route 0.0.0.0 0.0.0.0 g1/0/1
 end
 
 ! GRABAR CONFIGURACION
@@ -2737,9 +2714,9 @@ shutdown
 
 ! ASIGNAR IP EN VLAN 99
 interface Vlan99
-ip address 172.21.99.41 255.255.255.0
+ip address 172.21.99.50 255.255.255.240
 exit
-ip default-gateway 172.21.99.5
+ip default-gateway 172.21.99.49
 end
 
 ! GRABAR CONFIGURACION
@@ -2809,9 +2786,9 @@ shutdown
 
 ! ASIGNAR IP EN VLAN 99
 interface Vlan99
-ip address 172.21.99.42 255.255.255.0
+ip address 172.21.99.51 255.255.255.240
 exit
-ip default-gateway 172.21.99.5
+ip default-gateway 172.21.99.49
 end
 
 ! GRABAR CONFIGURACION
@@ -2881,9 +2858,9 @@ shutdown
 
 ! ASIGNAR IP EN VLAN 99
 interface Vlan99
-ip address 172.21.99.43 255.255.255.0
+ip address 172.21.99.52 255.255.255.240
 exit
-ip default-gateway 172.21.99.5
+ip default-gateway 172.21.99.49
 end
 
 ! GRABAR CONFIGURACION
@@ -2953,9 +2930,9 @@ shutdown
 
 ! ASIGNAR IP EN VLAN 99
 interface Vlan99
-ip address 172.21.99.44 255.255.255.0
+ip address 172.21.99.53 255.255.255.240
 exit
-ip default-gateway 172.21.99.5
+ip default-gateway 172.21.99.49
 end
 
 ! GRABAR CONFIGURACION
@@ -3025,9 +3002,9 @@ shutdown
 
 ! ASIGNAR IP EN VLAN 99
 interface Vlan99
-ip address 172.21.99.45 255.255.255.0
+ip address 172.21.99.54 255.255.255.240
 exit
-ip default-gateway 172.21.99.5
+ip default-gateway 172.21.99.49
 end
 
 ! GRABAR CONFIGURACION
@@ -3097,9 +3074,9 @@ shutdown
 
 ! ASIGNAR IP EN VLAN 99
 interface Vlan99
-ip address 172.21.99.46 255.255.255.0
+ip address 172.21.99.55 255.255.255.240
 exit
-ip default-gateway 172.21.99.5
+ip default-gateway 172.21.99.49
 end
 
 ! GRABAR CONFIGURACION
@@ -3169,9 +3146,9 @@ shutdown
 
 ! ASIGNAR IP EN VLAN 99
 interface Vlan99
-ip address 172.21.99.47 255.255.255.0
+ip address 172.21.99.56 255.255.255.240
 exit
-ip default-gateway 172.21.99.5
+ip default-gateway 172.21.99.49
 end
 
 ! GRABAR CONFIGURACION
@@ -3216,9 +3193,6 @@ router ospf 100
 router-id 5.5.5.5
 network 172.21.80.192 0.0.0.3 area 0
 network 172.22.254.16 0.0.0.3 area 0
-exit
-
-ip route 0.0.0.0 0.0.0.0 172.22.254.13
 end
 
 ! CONFIGURAR PPP-PAP
@@ -3322,7 +3296,7 @@ interface VLAN580
 ip address 172.21.80.161 255.255.255.240
 !
 interface Vlan99
-ip address 172.21.99.6 255.255.255.0
+ip address 172.21.99.65 255.255.255.240
 !
 exit
 
@@ -3380,11 +3354,8 @@ network 172.21.80.144 0.0.0.15 area 0
 network 172.21.80.160 0.0.0.15 area 0
 network 172.21.80.176 0.0.0.7 area 0
 network 172.21.80.184 0.0.0.7 area 0
-network 172.21.99.0 0.0.0.255 area 0
+network 172.21.99.64 0.0.0.15 area 0
 network 172.21.80.192 0.0.0.3 area 0
-exit
-
-ip route 0.0.0.0 0.0.0.0 g1/0/1
 end
 
 ! GRABAR CONFIGURACION
@@ -3454,9 +3425,9 @@ shutdown
 
 ! ASIGNAR IP EN VLAN 99
 interface Vlan99
-ip address 172.21.99.51 255.255.255.0
+ip address 172.21.99.66 255.255.255.240
 exit
-ip default-gateway 172.21.99.6
+ip default-gateway 172.21.99.65
 end
 
 ! GRABAR CONFIGURACION
@@ -3526,9 +3497,9 @@ shutdown
 
 ! ASIGNAR IP EN VLAN 99
 interface Vlan99
-ip address 172.21.99.52 255.255.255.0
+ip address 172.21.99.67 255.255.255.240
 exit
-ip default-gateway 172.21.99.6
+ip default-gateway 172.21.99.65
 end
 
 ! GRABAR CONFIGURACION
@@ -3598,9 +3569,9 @@ shutdown
 
 ! ASIGNAR IP EN VLAN 99
 interface Vlan99
-ip address 172.21.99.53 255.255.255.0
+ip address 172.21.99.68 255.255.255.240
 exit
-ip default-gateway 172.21.99.6
+ip default-gateway 172.21.99.65
 end
 
 ! GRABAR CONFIGURACION
@@ -3670,9 +3641,9 @@ shutdown
 
 ! ASIGNAR IP EN VLAN 99
 interface Vlan99
-ip address 172.21.99.54 255.255.255.0
+ip address 172.21.99.69 255.255.255.240
 exit
-ip default-gateway 172.21.99.6
+ip default-gateway 172.21.99.65
 end
 
 ! GRABAR CONFIGURACION
@@ -3742,9 +3713,9 @@ shutdown
 
 ! ASIGNAR IP EN VLAN 99
 interface Vlan99
-ip address 172.21.99.55 255.255.255.0
+ip address 172.21.99.70 255.255.255.240
 exit
-ip default-gateway 172.21.99.6
+ip default-gateway 172.21.99.65
 end
 
 ! GRABAR CONFIGURACION
@@ -3814,9 +3785,9 @@ shutdown
 
 ! ASIGNAR IP EN VLAN 99
 interface Vlan99
-ip address 172.21.99.56 255.255.255.0
+ip address 172.21.99.71 255.255.255.240
 exit
-ip default-gateway 172.21.99.6
+ip default-gateway 172.21.99.65
 end
 
 ! GRABAR CONFIGURACION
@@ -3886,9 +3857,9 @@ shutdown
 
 ! ASIGNAR IP EN VLAN 99
 interface Vlan99
-ip address 172.21.99.57 255.255.255.0
+ip address 172.21.99.72 255.255.255.240
 exit
-ip default-gateway 172.21.99.6
+ip default-gateway 172.21.99.65
 end
 
 ! GRABAR CONFIGURACION
