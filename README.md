@@ -352,6 +352,49 @@ network 172.21.17.136 0.0.0.3 area 0
 network 172.21.17.144 0.0.0.3 area 0
 end
 
+! CONFIGURAR ACL
+configure terminal
+ip access-list extended FILTRO-FTPWEBLIM
+permit tcp 172.21.17.0 0.0.0.31 172.21.17.133 0.0.0.0 eq 20
+permit tcp 172.21.17.0 0.0.0.31 172.21.17.133 0.0.0.0 eq 21
+permit tcp 172.21.17.32 0.0.0.31 172.21.17.133 0.0.0.0 eq 20
+permit tcp 172.21.17.32 0.0.0.31 172.21.17.133 0.0.0.0 eq 21
+permit tcp 172.21.16.192 0.0.0.63 172.21.17.133 0.0.0.0 eq 20
+permit tcp 172.21.16.192 0.0.0.63 172.21.17.133 0.0.0.0 eq 21
+deny tcp 172.21.16.0 0.0.0.127 172.21.17.133 0.0.0.0 eq 20
+deny tcp 172.21.16.0 0.0.0.127 172.21.17.133 0.0.0.0 eq 21
+deny tcp 172.21.16.128 0.0.0.63 172.21.17.133 0.0.0.0 eq 20
+deny tcp 172.21.16.128 0.0.0.63 172.21.17.133 0.0.0.0 eq 21
+deny tcp 172.21.17.64 0.0.0.31 172.21.17.133 0.0.0.0 eq 20
+deny tcp 172.21.17.64 0.0.0.31 172.21.17.133 0.0.0.0 eq 21
+deny tcp 172.21.17.96 0.0.0.31 172.21.17.133 0.0.0.0 eq 20
+deny tcp 172.21.17.96 0.0.0.31 172.21.17.133 0.0.0.0 eq 21
+deny tcp 172.21.16.0 0.0.0.127 172.21.17.131 0.0.0.0 eq 80
+deny tcp 172.21.16.0 0.0.0.127 172.21.17.131 0.0.0.0 eq 443
+deny tcp 172.21.17.96 0.0.0.31 172.21.17.131 0.0.0.0 eq 80
+deny tcp 172.21.17.96 0.0.0.31 172.21.17.131 0.0.0.0 eq 443
+deny tcp 172.21.17.64 0.0.0.31 172.21.17.131 0.0.0.0 eq 80
+deny tcp 172.21.17.64 0.0.0.31 172.21.17.131 0.0.0.0 eq 443
+deny tcp 172.21.17.32 0.0.0.31 172.21.17.131 0.0.0.0 eq 80
+deny tcp 172.21.17.32 0.0.0.31 172.21.17.131 0.0.0.0 eq 443
+permit ip any any
+exit
+int vlan 110
+ip access-group FILTRO-FTPWEBLIM in
+int vlan 120
+ip access-group FILTRO-FTPWEBLIM in
+int vlan 130
+ip access-group FILTRO-FTPWEBLIM in
+int vlan 140
+ip access-group FILTRO-FTPWEBLIM in
+int vlan 150
+ip access-group FILTRO-FTPWEBLIM in
+int vlan 170
+ip access-group FILTRO-FTPWEBLIM in
+int vlan 180
+ip access-group FILTRO-FTPWEBLIM in
+end
+
 ! GRABAR CONFIGURACION
 write
 write memory
@@ -510,6 +553,49 @@ network 172.21.17.128 0.0.0.7 area 0
 network 172.21.99.0 0.0.0.15 area 0
 network 172.21.17.140 0.0.0.3 area 0
 network 172.21.17.144 0.0.0.3 area 0
+end
+
+! CONFIGURAR ACL
+configure terminal
+ip access-list extended FILTRO-FTPWEBLIM
+permit tcp 172.21.17.0 0.0.0.31 172.21.17.133 0.0.0.0 eq 20
+permit tcp 172.21.17.0 0.0.0.31 172.21.17.133 0.0.0.0 eq 21
+permit tcp 172.21.17.32 0.0.0.31 172.21.17.133 0.0.0.0 eq 20
+permit tcp 172.21.17.32 0.0.0.31 172.21.17.133 0.0.0.0 eq 21
+permit tcp 172.21.16.192 0.0.0.63 172.21.17.133 0.0.0.0 eq 20
+permit tcp 172.21.16.192 0.0.0.63 172.21.17.133 0.0.0.0 eq 21
+deny tcp 172.21.16.0 0.0.0.127 172.21.17.133 0.0.0.0 eq 20
+deny tcp 172.21.16.0 0.0.0.127 172.21.17.133 0.0.0.0 eq 21
+deny tcp 172.21.16.128 0.0.0.63 172.21.17.133 0.0.0.0 eq 20
+deny tcp 172.21.16.128 0.0.0.63 172.21.17.133 0.0.0.0 eq 21
+deny tcp 172.21.17.64 0.0.0.31 172.21.17.133 0.0.0.0 eq 20
+deny tcp 172.21.17.64 0.0.0.31 172.21.17.133 0.0.0.0 eq 21
+deny tcp 172.21.17.96 0.0.0.31 172.21.17.133 0.0.0.0 eq 20
+deny tcp 172.21.17.96 0.0.0.31 172.21.17.133 0.0.0.0 eq 21
+deny tcp 172.21.16.0 0.0.0.127 172.21.17.131 0.0.0.0 eq 80
+deny tcp 172.21.16.0 0.0.0.127 172.21.17.131 0.0.0.0 eq 443
+deny tcp 172.21.17.96 0.0.0.31 172.21.17.131 0.0.0.0 eq 80
+deny tcp 172.21.17.96 0.0.0.31 172.21.17.131 0.0.0.0 eq 443
+deny tcp 172.21.17.64 0.0.0.31 172.21.17.131 0.0.0.0 eq 80
+deny tcp 172.21.17.64 0.0.0.31 172.21.17.131 0.0.0.0 eq 443
+deny tcp 172.21.17.32 0.0.0.31 172.21.17.131 0.0.0.0 eq 80
+deny tcp 172.21.17.32 0.0.0.31 172.21.17.131 0.0.0.0 eq 443
+permit ip any any
+exit
+int vlan 110
+ip access-group FILTRO-FTPWEBLIM in
+int vlan 120
+ip access-group FILTRO-FTPWEBLIM in
+int vlan 130
+ip access-group FILTRO-FTPWEBLIM in
+int vlan 140
+ip access-group FILTRO-FTPWEBLIM in
+int vlan 150
+ip access-group FILTRO-FTPWEBLIM in
+int vlan 170
+ip access-group FILTRO-FTPWEBLIM in
+int vlan 180
+ip access-group FILTRO-FTPWEBLIM in
 end
 
 ! GRABAR CONFIGURACION
@@ -1223,6 +1309,47 @@ network 172.21.33.64 0.0.0.15 area 0
 network 172.21.33.80 0.0.0.7 area 0
 network 172.21.99.16 0.0.0.15 area 0
 network 172.21.33.88 0.0.0.3 area 0
+end
+
+! CONFIGURAR ACL
+configure terminal
+IP ACCESS-LIST Extended FILTRO-FTPWEBPIU
+PERMIT TCP 172.21.32.0 0.0.0.127 172.21.33.84 0.0.0.0 eq 20
+PERMIT TCP 172.21.32.0 0.0.0.127 172.21.33.84 0.0.0.0 eq 21
+PERMIT TCP 172.21.33.0 0.0.0.31 172.21.33.84 0.0.0.0 eq 20
+PERMIT TCP 172.21.33.0 0.0.0.31 172.21.33.84 0.0.0.0 eq 21
+PERMIT TCP 172.21.32.224 0.0.0.31 172.21.33.84 0.0.0.0 eq 20
+PERMIT TCP 172.21.32.224 0.0.0.31 172.21.33.84 0.0.0.0 eq 21
+DENY TCP 172.21.32.128 0.0.0.63 172.21.33.84 0.0.0.0 eq 20
+DENY TCP 172.21.32.128 0.0.0.63 172.21.33.84 0.0.0.0 eq 21
+DENY TCP 172.21.32.192 0.0.0.31 172.21.33.84 0.0.0.0 eq 20
+DENY TCP 172.21.32.192 0.0.0.31 172.21.33.84 0.0.0.0 eq 21
+DENY TCP 172.21.33.64 0.0.0.15 172.21.33.84 0.0.0.0 eq 20
+DENY TCP 172.21.33.64 0.0.0.15 172.21.33.84 0.0.0.0 eq 21
+DENY TCP 172.21.33.32 0.0.0.31 172.21.33.84 0.0.0.0 eq 20
+DENY TCP 172.21.33.32 0.0.0.31 172.21.33.84 0.0.0.0 eq 21
+DENY TCP 172.21.32.128 0.0.0.63 172.21.33.83 0.0.0.0 eq 80
+DENY TCP 172.21.32.128 0.0.0.63 172.21.33.83 0.0.0.0 eq 443
+DENY TCP 172.21.32.192 0.0.0.31 172.21.33.83 0.0.0.0 eq 80
+DENY TCP 172.21.32.192 0.0.0.31 172.21.33.83 0.0.0.0 eq 443
+DENY TCP 172.21.33.64 0.0.0.15 172.21.33.83 0.0.0.0 eq 80
+DENY TCP 172.21.33.64 0.0.0.15 172.21.33.83 0.0.0.0 eq 443
+permit ip any any
+exit
+int vlan 210
+ip access-group FILTRO-FTPWEBPIU in
+int vlan 220
+ip access-group FILTRO-FTPWEBPIU in
+int vlan 230
+ip access-group FILTRO-FTPWEBPIU in
+int vlan 240
+ip access-group FILTRO-FTPWEBPIU in
+int vlan 250
+ip access-group FILTRO-FTPWEBPIU in
+int vlan 270
+ip access-group FILTRO-FTPWEBPIU in
+int vlan 280
+ip access-group FILTRO-FTPWEBPIU in
 end
 
 ! GRABAR CONFIGURACION
@@ -2647,6 +2774,47 @@ network 172.21.99.48 0.0.0.15 area 0
 network 172.21.64.200 0.0.0.3 area 0
 end
 
+! CONFIGURAR ACL
+configure terminal
+ip access-list extended FILTRO-FTPWEBCUS
+permit tcp 172.21.64.0 0.0.0.63 172.21.64.196 0.0.0.0 eq 20
+permit tcp 172.21.64.0 0.0.0.63 172.21.64.196 0.0.0.0 eq 21
+permit tcp 172.21.64.64 0.0.0.31 172.21.64.196 0.0.0.0 eq 20
+permit tcp 172.21.64.64 0.0.0.31 172.21.64.196 0.0.0.0 eq 21
+permit tcp 172.21.64.144 0.0.0.31 172.21.64.196 0.0.0.0 eq 20
+permit tcp 172.21.64.144 0.0.0.31 172.21.64.196 0.0.0.0 eq 21
+deny tcp 172.21.64.96 0.0.0.31 172.21.64.196 0.0.0.0 eq 20
+deny tcp 172.21.64.96 0.0.0.31 172.21.64.196 0.0.0.0 eq 21
+deny tcp 172.21.64.128 0.0.0.15 172.21.64.196 0.0.0.0 eq 20
+deny tcp 172.21.64.128 0.0.0.15 172.21.64.196 0.0.0.0 eq 21
+deny tcp 172.21.80.160 0.0.0.15 172.21.64.196 0.0.0.0 eq 20
+deny tcp 172.21.80.160 0.0.0.15 172.21.64.196 0.0.0.0 eq 21
+deny tcp 172.21.64.176 0.0.0.15 172.21.64.196 0.0.0.0 eq 20
+deny tcp 172.21.64.176 0.0.0.15 172.21.64.196 0.0.0.0 eq 21
+deny tcp 172.21.64.64 0.0.0.31 172.21.64.194 0.0.0.0 eq 80
+deny tcp 172.21.64.64 0.0.0.31 172.21.64.194 0.0.0.0 eq 443
+deny tcp 172.21.64.144 0.0.0.31 172.21.64.194 0.0.0.0 eq 80
+deny tcp 172.21.64.144 0.0.0.31 172.21.64.194 0.0.0.0 eq 443
+deny tcp 172.21.64.128 0.0.0.15 172.21.64.194 0.0.0.0 eq 80
+deny tcp 172.21.64.128 0.0.0.15 172.21.64.194 0.0.0.0 eq 443
+permit ip any any
+exit
+int vlan 410
+ip access-group FILTRO-FTPWEBCUS in
+int vlan 420
+ip access-group FILTRO-FTPWEBCUS in
+int vlan 430
+ip access-group FILTRO-FTPWEBCUS in
+int vlan 440
+ip access-group FILTRO-FTPWEBCUS in
+int vlan 450
+ip access-group FILTRO-FTPWEBCUS in
+int vlan 470
+ip access-group FILTRO-FTPWEBCUS in
+int vlan 480
+ip access-group FILTRO-FTPWEBCUS in
+end
+
 ! GRABAR CONFIGURACION
 write
 write memory
@@ -3356,6 +3524,47 @@ network 172.21.80.176 0.0.0.7 area 0
 network 172.21.80.184 0.0.0.7 area 0
 network 172.21.99.64 0.0.0.15 area 0
 network 172.21.80.192 0.0.0.3 area 0
+end
+
+! CONFIGURAR ACL
+configure terminal
+ip access-list extended FILTRO-FTPWEBCAJ
+permit tcp 172.21.80.128 0.0.0.15 172.21.80.187 0.0.0.0 eq 20
+permit tcp 172.21.80.128 0.0.0.15 172.21.80.187 0.0.0.0 eq 21
+permit tcp 172.21.80.144 0.0.0.15 172.21.80.187 0.0.0.0 eq 20
+permit tcp 172.21.80.144 0.0.0.15 172.21.80.187 0.0.0.0 eq 21
+permit tcp 172.21.80.96 0.0.0.31 172.21.80.187 0.0.0.0 eq 20
+permit tcp 172.21.80.96 0.0.0.31 172.21.80.187 0.0.0.0 eq 21
+deny tcp 172.21.80.64 0.0.0.31 172.21.80.187 0.0.0.0 eq 20
+deny tcp 172.21.80.64 0.0.0.31 172.21.80.187 0.0.0.0 eq 21
+deny tcp 172.21.80.0 0.0.0.63 172.21.80.187 0.0.0.0 eq 20
+deny tcp 172.21.80.0 0.0.0.63 172.21.80.187 0.0.0.0 eq 21
+deny tcp 172.21.80.160 0.0.0.15 172.21.80.187 0.0.0.0 eq 20
+deny tcp 172.21.80.160 0.0.0.15 172.21.80.187 0.0.0.0 eq 21
+deny tcp 172.21.80.176 0.0.0.7 172.21.80.187 0.0.0.0 eq 20
+deny tcp 172.21.80.176 0.0.0.7 172.21.80.187 0.0.0.0 eq 21
+deny tcp 172.21.80.0 0.0.0.63 172.21.80.188 0.0.0.0 eq 80
+deny tcp 172.21.80.0 0.0.0.63 172.21.80.188 0.0.0.0 eq 443
+deny tcp 172.21.80.176 0.0.0.7 172.21.80.188 0.0.0.0 eq 80
+deny tcp 172.21.80.176 0.0.0.7 172.21.80.188 0.0.0.0 eq 443
+deny tcp 172.21.80.160 0.0.0.15 172.21.80.188 0.0.0.0 eq 80
+deny tcp 172.21.80.160 0.0.0.15 172.21.80.188 0.0.0.0 eq 443
+permit ip any any
+exit
+int vlan 510
+ip access-group FILTRO-FTPWEBCAJ in
+int vlan 520
+ip access-group FILTRO-FTPWEBCAJ in
+int vlan 530
+ip access-group FILTRO-FTPWEBCAJ in
+int vlan 540
+ip access-group FILTRO-FTPWEBCAJ in
+int vlan 550
+ip access-group FILTRO-FTPWEBCAJ in
+int vlan 570
+ip access-group FILTRO-FTPWEBCAJ in
+int vlan 580
+ip access-group FILTRO-FTPWEBCAJ in
 end
 
 ! GRABAR CONFIGURACION
